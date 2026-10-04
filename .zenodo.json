@@ -1,0 +1,12 @@
+{
+  "title": "Orch-OR Visualizer: an interactive, calibrated toy model of orchestrated objective reduction",
+  "description": "An interactive teaching model of the Penrose–Hameroff Orch-OR theory for iOS and the web: a 3D microtubule lattice in which tubulin superposition spreads by orchestration, accumulates gravitational self-energy, and undergoes objective reduction when the integral of E_G over time reaches ħ, calibrated to Hameroff and Penrose (2014), with a decoherence switch for the Tegmark (2000) and Hagan et al. (2002) estimates and a Diósi–Penrose calculator. Includes the arXiv-style paper draft.",
+  "creators": [
+    { "name": "Seong, Wonmo (John)", "affiliation": "Orchestr Aerospace Inc." }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [ "Orch OR", "orchestrated objective reduction", "consciousness", "microtubules", "Penrose", "Hameroff", "simulation", "physics education", "iOS" ],
+  "version": "1.0.0"
+}

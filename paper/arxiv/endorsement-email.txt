@@ -1,0 +1,15 @@
+Subject: arXiv endorsement request (physics.ed-ph) — interactive teaching model of Orch-OR
+
+Dear Dr. <Name>,
+
+I am submitting a short software/education paper to arXiv and, as a first-time submitter in physics.ed-ph, I need an endorsement. The paper describes Orch-OR Visualizer, an open-source interactive model of the Penrose–Hameroff theory: a 3D microtubule lattice in which superposition spreads and collapses under ∫E_G dt ≥ ħ, calibrated to Hameroff & Penrose (2014), with a decoherence switch set to the Tegmark and Hagan et al. estimates. It claims no new physics; it is a teaching instrument that presents both the theory and its criticisms with references.
+
+PDF: <attach>  ·  Web demo: https://wonmor.github.io/orch-or/  ·  Code: https://github.com/wonmor/OrchOR
+
+The endorsement link/code from arXiv is: <paste the code arXiv gives you at https://arxiv.org/auth/endorse>
+
+Thank you for considering it.
+
+Wonmo (John) Seong
+Chief Scientific Officer, Orchestr Aerospace Inc.
+john@orchestrsim.com
