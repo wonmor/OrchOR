@@ -1,0 +1,16 @@
+To: guillaume.lajoie@mila.quebec
+Subject: arXiv endorsement request (q-bio.NC): interactive model of Orch-OR
+
+Dear Professor Lajoie,
+
+I'm asking for an arXiv endorsement in q-bio.NC for a six-page paper on Orch-OR Visualizer, an open-source interactive model of the Penrose–Hameroff theory. Given your group's work at the boundary of consciousness science and computation, I thought it might be of some interest: the model is a lattice automaton with a collective-reset rule (∫E_G dt ≥ ħ) calibrated to Hameroff & Penrose (2014), with a decoherence switch for the Tegmark and Hagan et al. estimates. It claims no new physics and presents the criticisms with the theory.
+
+I'm Chief Scientific Officer at Orchestr Aerospace, where a small brain-computer-interface research effort is the source of my interest in this area.
+
+PDF attached. Web demo: https://wonmor.github.io/orch-or/   Code: https://github.com/wonmor/OrchOR
+
+arXiv generates the endorsement link only once a submission is created, so if you are willing in principle, I will send you that link the same day; it takes a minute to act on. Thank you for considering it.
+
+Wonmo (John) Seong
+Chief Scientific Officer, Orchestr Aerospace Inc.
+john@orchestrsim.com · https://orchaerospace.com

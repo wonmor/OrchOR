@@ -1,0 +1,16 @@
+To: karim.jerbi@umontreal.ca
+Subject: arXiv endorsement request (q-bio.NC): interactive model of Orch-OR
+
+Dear Professor Jerbi,
+
+I'm writing to ask for an arXiv endorsement in q-bio.NC for a short paper. Your recent preprint on complexity and entropy changes in non-ordinary states of consciousness, and your work on large-scale oscillatory dynamics, are why I'm asking you specifically: the model I built lives or dies on the 40 Hz gamma argument.
+
+Orch-OR Visualizer is an open-source interactive model of the Penrose–Hameroff theory: a 3D microtubule lattice in which tubulin superposition spreads and collapses under ∫E_G dt ≥ ħ, calibrated to Hameroff & Penrose (2014), with a decoherence switch for the Tegmark and Hagan et al. regimes. It claims no new physics and gives the theory's critics equal space. Six pages. I'm Chief Scientific Officer at Orchestr Aerospace, where a small brain-computer-interface research effort is the source of my interest in this area.
+
+PDF attached. Web demo: https://wonmor.github.io/orch-or/   Code: https://github.com/wonmor/OrchOR
+
+arXiv generates the endorsement link only once a submission is created, so if you are willing in principle, I will send you that link the same day; it takes a minute to act on. Thank you for considering it.
+
+Wonmo (John) Seong
+Chief Scientific Officer, Orchestr Aerospace Inc.
+john@orchestrsim.com · https://orchaerospace.com

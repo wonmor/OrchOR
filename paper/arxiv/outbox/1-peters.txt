@@ -1,0 +1,17 @@
+To: megan.peters@uci.edu
+Subject: arXiv endorsement request (q-bio.NC): interactive model of Orch-OR, from a UCI alum
+
+Dear Professor Peters,
+
+I'm a former UC Irvine student, now Chief Scientific Officer at Orchestr Aerospace, where alongside propulsion work we run a small brain-computer-interface research effort; that is where my interest in theories of consciousness comes from. I've written a short paper I'd like to post to arXiv, and as a first-time submitter in q-bio.NC I need an endorsement. Your work on metacognition and consciousness made you the natural person to ask.
+
+The paper describes Orch-OR Visualizer, an open-source interactive model of the Penrose–Hameroff theory: a 3D microtubule lattice in which tubulin superposition spreads by "orchestration" and collapses under ∫E_G dt ≥ ħ, calibrated to Hameroff & Penrose (2014), with a decoherence switch set to the Tegmark and Hagan et al. estimates so the central dispute can be experienced rather than read about. It claims no new physics and gives the theory's critics equal weight; it is a teaching instrument and a reference implementation of the theory's arithmetic. Six pages.
+
+PDF attached. Web demo: https://wonmor.github.io/orch-or/   Code: https://github.com/wonmor/OrchOR
+
+arXiv generates the endorsement link only once a submission is created, so if you are willing in principle, I will send you that link the same day; it takes a minute to act on. I understand completely if you're not able to.
+
+With thanks,
+Wonmo (John) Seong
+Chief Scientific Officer, Orchestr Aerospace Inc.
+john@orchestrsim.com · https://orchaerospace.com
