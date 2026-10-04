@@ -16,4 +16,4 @@ presents the theory, the decoherence objection and the current evidence with ref
 Code is MIT licensed (see LICENSE). If you use or build on this work, please cite it: see `CITATION.cff`.
 
 ## Acknowledgement
-Implementation was carried out with AI assistance (Claude, Anthropic) under the author's direction; the author takes full responsibility for the design and content.
+Conceived, designed and built by the author alone, with no academic supervision or collaborators; implementation used AI tools (Claude, Anthropic) under the author's direction. The author takes full responsibility for the design and content.

@@ -8,7 +8,7 @@
 \usepackage{doi}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 
-\title{Orch-OR Visualizer: An Interactive, Calibrated Toy Model of\\Orchestrated Objective Reduction for Teaching and Critique}
+\title{Orch-OR Visualizer: An Interactive, Calibrated Model of\\Orchestrated Objective Reduction for Teaching and Critique}
 \author{Wonmo (John) Seong\\ \small Chief Scientific Officer, Orchestr Aerospace Inc.\\ \small \href{mailto:john@orchestrsim.com}{john@orchestrsim.com}}
 \date{October 2026}
 
@@ -27,7 +27,7 @@ Whatever its standing, Orch-OR has a property that makes it unusually teachable:
 
 \paragraph{Related work.} Computational treatments of Orch-OR exist but are not aimed at interaction or teaching. Srivastava et al.\ \citep{srivastava2015} model microtubules as quantum Hopfield networks of qudits; D\'iaz \citep{diaz2025} simulates tubulin networks with dipole--dipole coupling near self-organised criticality and obtains Di\'osi--Penrose reduction times of 10--200~ms, with code available on request. A web calculator at countingmethods.com \citep{countingmethods} evaluates collapse times from user-entered neuron and tubulin counts. To our knowledge, no prior tool renders the lattice, animates orchestration and reduction in real time, or lets the user switch decoherence regimes; that gap is what this software fills.
 
-\paragraph{Contribution.} (i) A real-time toy model of orchestrated superposition growth and objective reduction on a geometrically faithful microtubule lattice, with the collapse criterion $\int E_G\,dt \ge \hbar$ and the Hameroff--Penrose calibration; (ii) a decoherence mode that reproduces, qualitatively, the Tegmark and Hagan et al.\ regimes; (iii) a Di\'osi--Penrose calculator that places all the relevant timescales on one logarithmic axis; (iv) an open-source implementation for iOS (Swift, SceneKit) and the web (three.js), with a didactic layer that presents both the theory and its criticisms with references. We claim no new physics.
+\paragraph{Contribution.} (i) A real-time teaching model of orchestrated superposition growth and objective reduction on a geometrically faithful microtubule lattice, with the collapse criterion $\int E_G\,dt \ge \hbar$ and the Hameroff--Penrose calibration; (ii) a decoherence mode that reproduces, qualitatively, the Tegmark and Hagan et al.\ regimes; (iii) a Di\'osi--Penrose calculator that places all the relevant timescales on one logarithmic axis; (iv) an open-source implementation for iOS (Swift, SceneKit) and the web (three.js), with a didactic layer that presents both the theory and its criticisms with references. We claim no new physics.
 
 \section{Background}
 \subsection{Objective reduction}
@@ -87,8 +87,8 @@ The didactic layer presents nine short sections: the claim, microtubules, tubuli
 \section{Availability}
 Orch-OR Visualizer is available for iPhone and iPad on the App Store and as a browser version at \url{https://wonmor.github.io/orch-or/}. Source code (Swift/SceneKit for iOS, three.js for the web) is released under the MIT licence at \url{https://github.com/wonmor/OrchOR} and \url{https://github.com/wonmor/orch-or}. A companion app by the same author, \emph{Orch Neural Network} (\url{https://github.com/wonmor/OrchNeuralNetwork}), applies the same approach to a classical system, running a small transformer language model on device and exposing its attention, activations and weights.
 
-\section*{Acknowledgements and disclosure}
-The software and this manuscript were produced with substantial AI assistance (Claude, Anthropic) under the author's direction. The author is responsible for the design, the framing, the choice of calibration and references, and all claims made here.
+\section*{Author statement and disclosure}
+This work was conceived, designed and carried out by the author alone, without academic supervision, collaborators or institutional support; the choice of subject, the model, its calibration and its framing are the author's own. Implementation and drafting were carried out with AI tools (Claude, Anthropic) under the author's direction. The author takes full responsibility for all content and claims.
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{99}
