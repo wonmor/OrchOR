@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09773AFE47B00DBB07825097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */; };
+		0C53ACA185706FB61470BE84 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339C23E880D0707F8484945D /* AboutView.swift */; };
+		24BBA30B434C02962B3803B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E80BD967BDA8CE563DD7AC /* ContentView.swift */; };
+		533DBF9F9F53D69813C5BC91 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A6A934844B1C37F162F86D /* Theme.swift */; };
+		5A7B7274BD69113B8C1344C1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */; };
+		84D3ED786F138109CAD048AE /* MicrotubuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44D47F7A762E7F26321242 /* MicrotubuleView.swift */; };
+		A2439EE50C5A8E8195F00CB4 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C66B93B8C11E69F1CC9D /* TimelineView.swift */; };
+		A2BF2D470171E09684557F97 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2B96F919547470D313523 /* LearnView.swift */; };
+		B4C61A468CD0E283393D774D /* OrchORApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7C1893B9E3DA4B8E63702 /* OrchORApp.swift */; };
+		CBD8BDE86E5FB945EF4EECD6 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E63003C66326F311A3F80 /* Physics.swift */; };
+		D5E336339F5C5F43BFF51982 /* OrchORSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E3556FEC347D33F26183C /* OrchORSimulation.swift */; };
+		E5605AA50109D1445B7F839F /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C2A4FC96B8E4C2172D39E6 /* CalculatorView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		26E80BD967BDA8CE563DD7AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		339C23E880D0707F8484945D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		5B1E3556FEC347D33F26183C /* OrchORSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchORSimulation.swift; sourceTree = "<group>"; };
+		5D9250856DEB846460D1899C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		623E63003C66326F311A3F80 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
+		7F44D47F7A762E7F26321242 /* MicrotubuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrotubuleView.swift; sourceTree = "<group>"; };
+		8427C66B93B8C11E69F1CC9D /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		8683242EA87A1D553486331F /* OrchOR.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OrchOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF2B96F919547470D313523 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		94A6A934844B1C37F162F86D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEE7C1893B9E3DA4B8E63702 /* OrchORApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchORApp.swift; sourceTree = "<group>"; };
+		F6C2A4FC96B8E4C2172D39E6 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		00D822A600A233FE01AA91A3 /* OrchOR */ = {
+			isa = PBXGroup;
+			children = (
+				5D9250856DEB846460D1899C /* Info.plist */,
+				A78CCE2CC00BF4DED5D554D4 /* App */,
+				7218E4279581644568919237 /* Model */,
+				6D1808D7DA42B1B6FD48A0E7 /* Resources */,
+				2844A54CA14C2880797D67E6 /* Views */,
+			);
+			path = OrchOR;
+			sourceTree = "<group>";
+		};
+		2844A54CA14C2880797D67E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				339C23E880D0707F8484945D /* AboutView.swift */,
+				F6C2A4FC96B8E4C2172D39E6 /* CalculatorView.swift */,
+				26E80BD967BDA8CE563DD7AC /* ContentView.swift */,
+				8CF2B96F919547470D313523 /* LearnView.swift */,
+				7F44D47F7A762E7F26321242 /* MicrotubuleView.swift */,
+				94A6A934844B1C37F162F86D /* Theme.swift */,
+				8427C66B93B8C11E69F1CC9D /* TimelineView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66FB896B06156739911CBA4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8683242EA87A1D553486331F /* OrchOR.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D1808D7DA42B1B6FD48A0E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */,
+				06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7218E4279581644568919237 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B1E3556FEC347D33F26183C /* OrchORSimulation.swift */,
+				623E63003C66326F311A3F80 /* Physics.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80D8465870F5CC5002B1247D = {
+			isa = PBXGroup;
+			children = (
+				00D822A600A233FE01AA91A3 /* OrchOR */,
+				66FB896B06156739911CBA4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A78CCE2CC00BF4DED5D554D4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EEE7C1893B9E3DA4B8E63702 /* OrchORApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		971E9401D17F8EE0E91654E3 /* OrchOR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B266942A2355C48B49E1ED10 /* Build configuration list for PBXNativeTarget "OrchOR" */;
+			buildPhases = (
+				9EA44A3F5433ED45424A9132 /* Sources */,
+				A6F176A30B5705FF71A61EE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrchOR;
+			packageProductDependencies = (
+			);
+			productName = OrchOR;
+			productReference = 8683242EA87A1D553486331F /* OrchOR.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51C309F9E43A3DA036847D76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					971E9401D17F8EE0E91654E3 = {
+						DevelopmentTeam = Z64KRUX3W3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DB6F6E1269B065D707F7B0C5 /* Build configuration list for PBXProject "OrchOR" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 80D8465870F5CC5002B1247D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 66FB896B06156739911CBA4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				971E9401D17F8EE0E91654E3 /* OrchOR */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6F176A30B5705FF71A61EE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09773AFE47B00DBB07825097 /* Assets.xcassets in Resources */,
+				5A7B7274BD69113B8C1344C1 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9EA44A3F5433ED45424A9132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C53ACA185706FB61470BE84 /* AboutView.swift in Sources */,
+				E5605AA50109D1445B7F839F /* CalculatorView.swift in Sources */,
+				24BBA30B434C02962B3803B6 /* ContentView.swift in Sources */,
+				A2BF2D470171E09684557F97 /* LearnView.swift in Sources */,
+				84D3ED786F138109CAD048AE /* MicrotubuleView.swift in Sources */,
+				B4C61A468CD0E283393D774D /* OrchORApp.swift in Sources */,
+				D5E336339F5C5F43BFF51982 /* OrchORSimulation.swift in Sources */,
+				CBD8BDE86E5FB945EF4EECD6 /* Physics.swift in Sources */,
+				533DBF9F9F53D69813C5BC91 /* Theme.swift in Sources */,
+				A2439EE50C5A8E8195F00CB4 /* TimelineView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0B05A5DA7A8068C6B1D0AE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Z64KRUX3W3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A1AC33F6125547270C326D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OrchOR/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Orch-OR";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.OrchOR;
+				PRODUCT_NAME = OrchOR;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B231CD2D5ED137CAD3296A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Z64KRUX3W3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BD4C493DC2A5EF315B371753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OrchOR/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Orch-OR";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.OrchOR;
+				PRODUCT_NAME = OrchOR;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B266942A2355C48B49E1ED10 /* Build configuration list for PBXNativeTarget "OrchOR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD4C493DC2A5EF315B371753 /* Debug */,
+				4A1AC33F6125547270C326D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DB6F6E1269B065D707F7B0C5 /* Build configuration list for PBXProject "OrchOR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B05A5DA7A8068C6B1D0AE39 /* Debug */,
+				B231CD2D5ED137CAD3296A66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 51C309F9E43A3DA036847D76 /* Project object */;
+}

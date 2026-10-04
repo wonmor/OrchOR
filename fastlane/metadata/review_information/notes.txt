@@ -1,0 +1,1 @@
+Educational physics app. Fully offline, no sign-in. The 3D view on the first tab runs a simulation automatically; the Timeline tab fills in after a few seconds. The Learn tab presents the theory and its main criticisms with references.

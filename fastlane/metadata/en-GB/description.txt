@@ -1,0 +1,12 @@
+Orch-OR is the Penrose–Hameroff proposal that consciousness arises from quantum events inside the microtubules of neurons. This app turns the theory into something you can run, poke, and argue with.
+
+• 3D microtubule — a 13-protofilament tubulin lattice you can spin and zoom. Watch superposition (violet) seed, spread by orchestration, and collapse in a flash of objective reduction.
+• Live physics — gravitational self-energy E_G, the Diósi–Penrose collapse time τ = ħ/E_G, and the running ∫E_G dt → ħ that triggers each event, calibrated to Hameroff & Penrose (2014).
+• Timeline — coherence over time and every collapse event, with the event rate compared to 40 Hz gamma synchrony.
+• Decoherence switch — turn on environmental decoherence at Tegmark's 10⁻¹³ s or Hagan et al.'s 10⁻⁴ s and see whether coherence ever survives long enough. This is the heart of the scientific dispute.
+• Calculator — how many tubulins and neurons a 25 ms conscious moment would need, with all the relevant timescales on one log axis.
+• Learn — nine short cards covering the claim, microtubules, tubulin qubits, objective reduction, orchestration, the 40 Hz argument, the decoherence objection, the evidence proponents cite (2023–2024 microtubule optics and anaesthesia studies), and where the theory stands today, with full references.
+
+The simulation is a teaching model, not a physical one. Orch-OR is a minority view in neuroscience, and the app says so. It exists because the theory makes concrete, falsifiable numerical claims, and those are worth being able to compute.
+
+No account, no network, no data collection.
