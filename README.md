@@ -10,7 +10,7 @@ presents the theory, the decoherence objection and the current evidence with ref
 - `OrchOR/Model/` physics constants and the simulation; `OrchOR/Views/` SwiftUI screens
 - `fastlane/` App Store metadata, screenshots and lanes (age_rating, privacy, pricing, status, submit, inspect_asc)
 
-© 2026 John Seong
+© 2026 Wonmo (John) Seong
 
 ## Licence and citation
 Code is MIT licensed (see LICENSE). If you use or build on this work, please cite it: see `CITATION.cff`.

@@ -48,4 +48,4 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         UIUserInterfaceStyle: Dark
-        NSHumanReadableCopyright: "© 2026 John Seong"
+        NSHumanReadableCopyright: "© 2026 Wonmo (John) Seong"
