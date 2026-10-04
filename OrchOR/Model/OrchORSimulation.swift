@@ -15,7 +15,7 @@ struct HistoryPoint: Identifiable {
     let superposed: Int
 }
 
-/// A toy model of Orchestrated Objective Reduction on a single microtubule lattice.
+/// An interactive model of Orchestrated Objective Reduction on a single microtubule lattice.
 ///
 /// Each displayed tubulin dimer stands in for `10^representationExponent` real dimers spread across many
 /// neurons, so the lattice can reach the ~2×10¹⁰ tubulins Hameroff & Penrose associate with a 25 ms event.
