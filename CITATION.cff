@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Orch-OR Visualizer: an interactive model of orchestrated objective reduction"
+authors:
+  - family-names: Seong
+    given-names: John
+    email: wonmor@yahoo.com
+version: "1.0"
+date-released: "2026-10-04"
+url: "https://wonmor.github.io/orch-or/"
+repository-code: "https://github.com/wonmor/OrchOR"
+license: MIT
+abstract: "An interactive teaching model of the Penrose–Hameroff Orch-OR theory: a 3D microtubule lattice in which tubulin superposition spreads by orchestration, accumulates gravitational self-energy, and undergoes objective reduction when the integral of E_G over time reaches ħ, calibrated to Hameroff and Penrose (2014), with a decoherence switch for the Tegmark and Hagan et al. estimates and a Diósi–Penrose calculator."
+keywords: [Orch OR, consciousness, objective reduction, microtubules, simulation, physics education, iOS]
