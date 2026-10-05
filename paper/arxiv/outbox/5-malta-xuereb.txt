@@ -1,0 +1,15 @@
+To: andre.xuereb@um.edu.mt
+Subject: An Orch-OR model you can run, and a question about Malta
+
+Dear Professor Xuereb,
+
+I run the science side of Orchestr Aerospace, a small propulsion startup. We also have a brain-computer-interface project, and before I let myself build anything that touches a brain I wanted to understand what we actually know about the brain and experience. That turned into a question I can't put down: is the brain the thing that produces consciousness, or is it where experience shows up from the outside? Penrose and Hameroff sit in an odd middle position on that, physical but needing new physics, and their theory is one of the few that gives you numbers to check. So I built something that checks them.
+
+It's a small open-source model: a 3D microtubule lattice where tubulin superposition spreads and collapses once ∫E_G dt reaches ħ, calibrated to Hameroff and Penrose's 2014 figures, with a switch for the Tegmark and Hagan et al. decoherence estimates so you can watch the argument play out. It doesn't claim any new physics and it gives the critics as much room as the theory. Six-page write-up attached; you can run it in a browser at https://wonmor.github.io/orch-or/ and the code is at https://github.com/wonmor/OrchOR. I've also attached a second, quantitative paper that puts the same dynamics on tubulin qubits, with the Diósi–Penrose collapse rule and decoherence at the published rates, and tests a Trotterised version under an IBM Heron noise model. Its main result is that 40 Hz moments would need coherence lasting about 76 ms, roughly 760 times the most optimistic published estimate for microtubules. Code and data: https://github.com/wonmor/orch-or-quantum.
+
+I'm writing to you in particular because of Malta's quantum programme, and because I am applying for Maltese citizenship under the merit route. That application is helped by letters from scientists who can speak to the merit of an applicant's work. I know you don't know me, so I'm not asking for that today. I'm asking whether you'd be willing to have a short call about the work. If afterwards you thought it had merit, I would ask whether you'd consider a brief signed letter saying so. If not, no hard feelings, and I'd still like to hear what you make of it.
+
+Thanks for reading,
+Wonmo (John) Seong
+Chief Scientific Officer, Orchestr Aerospace
+john@orchestrsim.com

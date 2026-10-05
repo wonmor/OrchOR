@@ -1,5 +1,7 @@
 # Orch-OR Visualizer
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23149126.svg)](https://doi.org/10.5281/zenodo.23149126)
+
 iOS app that turns the Penrose–Hameroff "Orchestrated Objective Reduction" theory of consciousness into an
 interactive model: a 3D microtubule lattice (SceneKit) where tubulin superpositions seed, spread by
 orchestration, accumulate gravitational self-energy and collapse when ∫E_G dt ≥ ħ; a timeline of events
