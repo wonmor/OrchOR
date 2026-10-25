@@ -18,7 +18,7 @@ struct MicrotubuleView: View {
                 }
                 if hSize == .regular {
                     HStack(alignment: .top, spacing: 16) {
-                        sceneBlock(height: 640)
+                        sceneBlock(height: 780)
                         VStack(spacing: 16) { readouts; controls(sim: $sim) }
                             .frame(width: 420)
                     }
