@@ -57,12 +57,10 @@ struct CalculatorView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Theme.yellow)
             .accessibilityElement(children: .combine)
-            Grid(alignment: .topLeading, horizontalSpacing: 12, verticalSpacing: 10) {
-                GridRow {
-                    Readout(label: "N", value: n.sci("", digits: 1))
-                    Readout(label: "E_G", value: eG.sci("J", digits: 1))
-                    Readout(label: "Rate", value: tau.isFinite ? String(format: "%.1f Hz", 1 / tau) : "—", color: Theme.blueText)
-                }
+            ReadoutRow {
+                Readout(label: "N", value: n.sci("", digits: 1))
+                Readout(label: "E_G", value: eG.sci("J", digits: 1))
+                Readout(label: "Rate", value: tau.isFinite ? String(format: "%.1f Hz", 1 / tau) : "—", color: Theme.blueText)
             }
             Text("Calibration: Hameroff & Penrose (2014) estimate that ~2×10¹⁰ tubulins, each displaced by about the width of an atomic nucleus, give τ ≈ 25 ms, the period of 40 Hz gamma synchrony.")
                 .font(.footnote).foregroundStyle(Theme.muted)

@@ -168,8 +168,9 @@ final class OrchORSimulation {
             for p in 0 ..< protofilaments {
                 let i = index(proto: p, ring: r)
                 // A freshly collapsed band (red) beside a growing superposed patch (yellow).
-                if r >= 4 && r <= 13 && (p <= 5 || p == 12) { lastCollapsed[i] = true }
-                if r >= 15 && r <= 25 && (p >= 1 && p <= 7) { states[i] = .superposed; phase[i] = Float.random(in: 0 ..< 1) }
+                // Bands around the whole tube, so the picture holds while the lattice spins.
+                if r >= 3 && r <= 12 && p != 6 && p != 7 { lastCollapsed[i] = true }
+                if r >= 15 && r <= 25 && !(r >= 23 && p >= 9) { states[i] = .superposed; phase[i] = Float.random(in: 0 ..< 1) }
             }
         }
         superposedCount = states.reduce(0) { $0 + ($1 == .superposed ? 1 : 0) }

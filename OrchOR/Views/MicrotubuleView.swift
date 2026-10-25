@@ -57,8 +57,9 @@ struct MicrotubuleView: View {
                     .foregroundStyle(Theme.ink)
                     .padding(.horizontal, 12).padding(.vertical, 8)
                     .background(Theme.red)
+                    .dynamicTypeSize(...DynamicTypeSize.xxLarge)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .trailing)
                 .frame(height: height)
                 .allowsHitTesting(false)
             }
@@ -75,6 +76,7 @@ struct MicrotubuleView: View {
             KeyRow(glyph: "bolt", color: Theme.redText, text: "Objective reduction")
         }
         .padding(10)
+        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
         .background(Theme.ink.opacity(0.88))
         .overlay(Rectangle().strokeBorder(Theme.rule, lineWidth: Theme.ruleWidth))
         .accessibilityElement(children: .combine)
@@ -83,18 +85,16 @@ struct MicrotubuleView: View {
 
     private var readouts: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Grid(alignment: .topLeading, horizontalSpacing: 12, verticalSpacing: 14) {
-                GridRow {
-                    Readout(label: "Superposed", value: "\(sim.superposedCount)/\(sim.count)", color: Theme.yellow)
-                    Readout(label: "Represents", value: sim.effectiveTubulins.compact)
-                    Readout(label: "E_G", value: sim.gravitationalSelfEnergy.sci("J", digits: 1))
-                }
-                GridRow { HRule().gridCellColumns(3) }
-                GridRow {
-                    Readout(label: "τ = ħ/E_G", value: sim.tau.timeString, color: Theme.yellow)
-                    Readout(label: "OR events", value: "\(sim.events.count)")
-                    Readout(label: "Event rate", value: sim.eventFrequencyHz.map { String(format: "%.0f Hz", $0) } ?? "—", color: Theme.blueText)
-                }
+            ReadoutRow {
+                Readout(label: "Superposed", value: "\(sim.superposedCount)/\(sim.count)", color: Theme.yellow)
+                Readout(label: "Represents", value: sim.effectiveTubulins.compact)
+                Readout(label: "E_G", value: sim.gravitationalSelfEnergy.sci("J", digits: 1))
+            }
+            HRule()
+            ReadoutRow {
+                Readout(label: "τ = ħ/E_G", value: sim.tau.timeString, color: Theme.yellow)
+                Readout(label: "OR events", value: "\(sim.events.count)")
+                Readout(label: "Event rate", value: sim.eventFrequencyHz.map { String(format: "%.0f Hz", $0) } ?? "—", color: Theme.blueText)
             }
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
@@ -208,12 +208,16 @@ final class MicrotubuleScene {
         lm.diffuse.contents = UIColor(white: 0.10, alpha: 1)
         lumen.materials = [lm]
         pivot.addChildNode(SCNNode(geometry: lumen))
-        scene.rootNode.addChildNode(pivot)
+        // Tilt the spinning lattice onto a diagonal so it fills the frame and clears the key at top left.
+        let tilt = SCNNode()
+        tilt.eulerAngles = SCNVector3(0, 0, -0.42)
+        tilt.addChildNode(pivot)
+        scene.rootNode.addChildNode(tilt)
 
         camera.camera = SCNCamera()
         camera.camera?.fieldOfView = 38
         camera.camera?.projectionDirection = .vertical
-        camera.position = SCNVector3(10.5, 3.2, 10.5)
+        camera.position = SCNVector3(9.4, 2.4, 9.4)
         camera.look(at: SCNVector3(0, 0, 0))
         scene.rootNode.addChildNode(camera)
 

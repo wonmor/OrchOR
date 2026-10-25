@@ -189,10 +189,23 @@ struct Readout: View {
     }
 }
 
+/// A row of readouts on the grid that becomes a single column at accessibility text sizes.
+struct ReadoutRow<Content: View>: View {
+    @Environment(\.dynamicTypeSize) private var dts
+    @ViewBuilder var content: Content
+    var body: some View {
+        let layout = dts.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 12))
+            : AnyLayout(HStackLayout(alignment: .top, spacing: 12))
+        layout { content }
+    }
+}
+
 // MARK: - Controls
 
 /// A fader: 2 pt track rule, a thick accent fill and an off-white vertical handle bar.
 struct BauhausSlider: View {
+    @Environment(\.dynamicTypeSize) private var dts
     let label: String
     @Binding var value: Double
     let range: ClosedRange<Double>
@@ -206,13 +219,18 @@ struct BauhausSlider: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .firstTextBaseline) {
+            let layout = dts.isAccessibilitySize
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+                : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 8))
+            layout {
                 TrackedText(label)
                     .fixedSize(horizontal: false, vertical: true)
-                Spacer(minLength: 8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
                 Text(format(value))
                     .font(.system(.footnote, design: .monospaced).weight(.semibold))
                     .foregroundStyle(Theme.paper)
+                    .fixedSize()
             }
             GeometryReader { geo in
                 let w = geo.size.width

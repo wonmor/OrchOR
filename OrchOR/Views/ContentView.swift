@@ -63,7 +63,7 @@ struct BauhausTabBar: View {
             .fixedSize(horizontal: false, vertical: true)
         }
         .background(Theme.ink.ignoresSafeArea(edges: .bottom))
-        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+        .dynamicTypeSize(...DynamicTypeSize.xLarge)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Tabs")
     }
