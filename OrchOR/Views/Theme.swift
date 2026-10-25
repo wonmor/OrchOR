@@ -25,6 +25,11 @@ enum Theme {
     static let corner: CGFloat = 0
     /// Content width cap on iPad so lines stay readable on the hard grid.
     static let maxContentWidth: CGFloat = 1180
+
+    /// Uppercase for tracked labels, leaving maths symbols and units-sensitive Greek alone (τ, ħ, µ, ∫).
+    static func caps(_ s: String) -> String {
+        s.map { "τħµ∫".contains($0) ? String($0) : $0.uppercased() }.joined()
+    }
 }
 
 extension Color {
@@ -62,7 +67,7 @@ struct TrackedText: View {
         self.text = text; self.color = color; self.size = size
     }
     var body: some View {
-        Text(text.uppercased())
+        Text(Theme.caps(text))
             .font(BFont.label(size))
             .tracking(1.6)
             .foregroundStyle(color)
@@ -257,7 +262,7 @@ struct BauhausToggleStyle: ToggleStyle {
     }
 
     private func segment(_ t: String, active: Bool, field: Color) -> some View {
-        Text(t.uppercased())
+        Text(Theme.caps(t))
             .font(BFont.label(12))
             .tracking(1.6)
             .foregroundStyle(active ? Theme.ink : Theme.muted)

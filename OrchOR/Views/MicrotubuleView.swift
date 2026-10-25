@@ -43,7 +43,7 @@ struct MicrotubuleView: View {
                 .frame(height: height)
                 .accessibilityLabel("3D microtubule lattice, \(sim.superposedCount) of \(sim.count) dimers in superposition")
             // Objective-reduction flash: a flat red field, no glow.
-            Theme.red.opacity(Double(sim.flash) * 0.28)
+            Theme.red.opacity(Double(sim.flash) * 0.10)
                 .frame(height: height)
                 .allowsHitTesting(false)
             legend.padding(12)
@@ -128,15 +128,15 @@ struct MicrotubuleView: View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 10) {
                 Button { self.sim.running.toggle() } label: {
-                    Label(self.sim.running ? "Pause" : "Run", systemImage: self.sim.running ? "pause" : "play")
+                    Text(self.sim.running ? "Pause" : "Run")
                 }
                 .buttonStyle(.bauhaus(.filled(Theme.yellow)))
-                Button { self.sim.reset() } label: { Label("Reset", systemImage: "arrow.counterclockwise") }
+                Button { self.sim.reset() } label: { Text("Reset") }
                     .buttonStyle(.bauhaus(.outline(Theme.paper)))
                 Spacer(minLength: 0)
             }
             BauhausSlider(label: "Orchestration (MAP coupling)", value: sim.orchestration, range: 0 ... 1, accent: Theme.yellow) { String(format: "%.2f", $0) }
-            BauhausSlider(label: "Each displayed dimer stands for", value: sim.representationExponent, range: 5 ... 9, accent: Theme.blue) { "10^\(String(format: "%.1f", $0))" }
+            BauhausSlider(label: "Each displayed dimer stands for", value: sim.representationExponent, range: 5 ... 9, accent: Theme.blue) { "10" + String(format: "%.1f", $0).superscript }
             BauhausSlider(label: "Slow motion", value: sim.slowMotion, range: 1 ... 200, accent: Theme.paper) { "\(Int($0))×" }
             HRule()
             Toggle(isOn: sim.decoherenceEnabled) {
@@ -160,9 +160,9 @@ struct MicrotubuleView: View {
     }
 
     @ViewBuilder private var presetButtons: some View {
-        Button("Tegmark 2000 · 10⁻¹³ s") { self.sim.decoherenceExponent = -13 }
+        Button { self.sim.decoherenceExponent = -13 } label: { Text(Theme.caps("Tegmark 2000 · ") + "10⁻¹³ s").textCase(nil) }
             .buttonStyle(.bauhaus(.outline(Theme.redText), compact: true))
-        Button("Hagan 2002 · 10⁻⁴ s") { self.sim.decoherenceExponent = -4 }
+        Button { self.sim.decoherenceExponent = -4 } label: { Text(Theme.caps("Hagan 2002 · ") + "10⁻⁴ s").textCase(nil) }
             .buttonStyle(.bauhaus(.outline(Theme.redText), compact: true))
     }
 }

@@ -31,7 +31,8 @@ extension Double {
         if self == 0 { return "0 \(unit)" }
         let exp = Int(floor(log10(abs(self))))
         let mant = self / pow(10, Double(exp))
-        return String(format: "%.\(digits)f×10^%d %@", mant, exp, unit).trimmingCharacters(in: .whitespaces)
+        let m = String(format: "%.\(digits)f", mant)
+        return "\(m)×10\(String(exp).superscript) \(unit)".trimmingCharacters(in: .whitespaces)
     }
 
     /// Human time: 25 ms, 1.3 s, 100 fs…
@@ -51,5 +52,14 @@ extension Double {
         if self >= 1e6 { return String(format: "%.1f M", self / 1e6) }
         if self >= 1e3 { return String(format: "%.1f k", self / 1e3) }
         return String(format: "%.0f", self)
+    }
+}
+
+extension String {
+    /// "-34" → "⁻³⁴", "7.7" → "⁷·⁷", for exponents in readouts.
+    var superscript: String {
+        let table: [Character: Character] = ["0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶",
+                                           "7": "⁷", "8": "⁸", "9": "⁹", "-": "⁻", "+": "⁺", ".": "·"]
+        return String(self.map { table[$0] ?? $0 })
     }
 }

@@ -43,7 +43,7 @@ struct CalculatorView: View {
                 .fixedSize(horizontal: false, vertical: true)
             HRule()
             BauhausSlider(label: "Tubulins in coherent superposition", value: $logN, range: 6 ... 13, accent: Theme.yellow) {
-                "10^\(String(format: "%.1f", $0))"
+                "10" + String(format: "%.1f", $0).superscript
             }
             // Result block: τ on a flat yellow field, with N, E_G and rate beside it on the grid.
             VStack(alignment: .leading, spacing: 2) {

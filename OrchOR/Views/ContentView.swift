@@ -45,7 +45,7 @@ struct BauhausTabBar: View {
 
     private struct Item { let title: String; let glyph: String; let accent: Color }
     private let items: [Item] = [
-        Item(title: "Microtubule", glyph: "rotate.3d", accent: Theme.blue),
+        Item(title: "Microtubule", glyph: "view.3d", accent: Theme.blue),
         Item(title: "Timeline", glyph: "waveform.path.ecg", accent: Theme.yellow),
         Item(title: "Calculator", glyph: "function", accent: Theme.red),
         Item(title: "Learn", glyph: "book", accent: Theme.paper),
@@ -77,7 +77,7 @@ struct BauhausTabBar: View {
                 Image(systemName: item.glyph)
                     .font(.system(size: 20, weight: on ? .semibold : .regular))
                     .frame(height: 24)
-                Text(item.title.uppercased())
+                Text(Theme.caps(item.title))
                     .font(BFont.label(11, relativeTo: .caption2))
                     .tracking(1.2)
                     .lineLimit(1)
