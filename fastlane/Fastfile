@@ -132,3 +132,15 @@ platform :ios do
     end
   end
 end
+
+platform :ios do
+  desc "Stage the 1.1 dark Bauhaus screenshots (creates the 1.1 version on ASC if missing). Never submits."
+  lane :stage_screenshots_1_1 do
+    deliver(
+      username: USERNAME, team_id: TEAM_ID, app_identifier: APP_ID, app_version: "1.1",
+      skip_binary_upload: true, skip_metadata: true, skip_screenshots: false,
+      overwrite_screenshots: true, screenshots_path: "fastlane/screenshots",
+      submit_for_review: false, force: true, run_precheck_before_submit: false
+    )
+  end
+end

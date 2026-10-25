@@ -163,7 +163,7 @@ final class OrchORSimulation {
         guard let stage = UserDefaults.standard.string(forKey: "stage") else { return }
         for _ in 0 ..< 2400 { tick(realDt: 1.0 / 30) }
         guard stage == "hero" else { stagedRevision += 1; return }
-        for i in 0 ..< count { lastCollapsed[i] = false; if states[i] == .superposed { states[i] = .a } }
+        for i in 0 ..< count { lastCollapsed[i] = false; states[i] = Bool.random() ? .a : .b }
         for r in 0 ..< rings {
             for p in 0 ..< protofilaments {
                 let i = index(proto: p, ring: r)
