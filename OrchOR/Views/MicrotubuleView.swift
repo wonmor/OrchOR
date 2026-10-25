@@ -34,7 +34,12 @@ struct MicrotubuleView: View {
         .sheet(isPresented: $showAbout) { AboutView() }
         .onChange(of: sim.simTime) { _, _ in scene.apply(sim) }
         .onChange(of: sim.stagedRevision) { _, _ in scene.apply(sim) }
-        .onAppear { scene.apply(sim) }
+        .onAppear {
+            scene.apply(sim)
+            #if DEBUG
+            if UserDefaults.standard.bool(forKey: "showAbout") { showAbout = true }
+            #endif
+        }
     }
 
     private func sceneBlock(height: CGFloat) -> some View {

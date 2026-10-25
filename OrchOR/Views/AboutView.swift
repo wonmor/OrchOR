@@ -35,6 +35,7 @@ struct AboutView: View {
         }
         .background(Theme.ink.ignoresSafeArea())
         .presentationBackground(Theme.ink)
+        .presentationCornerRadius(2)
     }
 
     private func block(_ title: String, accent: Color, _ body: String) -> some View {
