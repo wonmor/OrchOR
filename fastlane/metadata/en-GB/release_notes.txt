@@ -1,1 +1,6 @@
-First release.
+A new dark Bauhaus look: ink fields, Futura type, and a strict red, yellow and blue palette across every screen.
+
+— The 3D microtubule now shows tubulin states in bone, blue, yellow (superposition) and red (objective reduction), so a collapse is easy to spot.
+— Timeline and Calculator charts redrawn with flat colour, thick rules and clearer axes; the timeline now zooms to the recent history instead of starting at zero.
+— Exponents read as proper superscripts (10⁻³⁴ J rather than 10^-34).
+— Larger, clearer Learn articles with numbered references.
