@@ -12,7 +12,7 @@ struct MicrotubuleView: View {
         @Bindable var sim = sim
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                ScreenHeader(index: "01", kicker: "Orch-OR · Lattice", title: "microtubule", accent: Theme.blue) {
+                ScreenHeader(index: "01", kicker: "Orch-OR lattice", title: "microtubule", accent: Theme.blue) {
                     Button { showAbout = true } label: { Label("About", systemImage: "info") }
                         .buttonStyle(.bauhaus(.outline(Theme.paper), compact: true))
                 }
@@ -75,8 +75,8 @@ struct MicrotubuleView: View {
 
     private var legend: some View {
         VStack(alignment: .leading, spacing: 6) {
-            KeyRow(glyph: "arrow.up", color: Theme.paper, text: "Tubulin · state A")
-            KeyRow(glyph: "arrow.down", color: Theme.blueText, text: "Tubulin · state B")
+            KeyRow(glyph: "arrow.up", color: Theme.paper, text: "Tubulin state A")
+            KeyRow(glyph: "arrow.down", color: Theme.blueText, text: "Tubulin state B")
             KeyRow(glyph: "arrow.up.arrow.down", color: Theme.yellow, text: "Superposition")
             KeyRow(glyph: "bolt", color: Theme.redText, text: "Objective reduction")
         }
@@ -141,7 +141,7 @@ struct MicrotubuleView: View {
                 Spacer(minLength: 0)
             }
             BauhausSlider(label: "Orchestration (MAP coupling)", value: sim.orchestration, range: 0 ... 1, accent: Theme.yellow) { String(format: "%.2f", $0) }
-            BauhausSlider(label: "Each displayed dimer stands for", value: sim.representationExponent, range: 5 ... 9, accent: Theme.blue) { "10" + String(format: "%.1f", $0).superscript }
+            BauhausSlider(label: "Each displayed dimer stands for", value: sim.representationExponent, range: 5 ... 9, accent: Theme.blue) { pow(10, $0).sci("", digits: 1) }
             BauhausSlider(label: "Slow motion", value: sim.slowMotion, range: 1 ... 200, accent: Theme.paper) { "\(Int($0))×" }
             HRule()
             Toggle(isOn: sim.decoherenceEnabled) {
@@ -165,9 +165,9 @@ struct MicrotubuleView: View {
     }
 
     @ViewBuilder private var presetButtons: some View {
-        Button { self.sim.decoherenceExponent = -13 } label: { Text(Theme.caps("Tegmark 2000 · ") + "10⁻¹³ s").textCase(nil) }
+        Button { self.sim.decoherenceExponent = -13 } label: { Text(Theme.caps("Tegmark 2000 – ") + "10⁻¹³ s").textCase(nil) }
             .buttonStyle(.bauhaus(.outline(Theme.redText), compact: true))
-        Button { self.sim.decoherenceExponent = -4 } label: { Text(Theme.caps("Hagan 2002 · ") + "10⁻⁴ s").textCase(nil) }
+        Button { self.sim.decoherenceExponent = -4 } label: { Text(Theme.caps("Hagan 2002 – ") + "10⁻⁴ s").textCase(nil) }
             .buttonStyle(.bauhaus(.outline(Theme.redText), compact: true))
     }
 }

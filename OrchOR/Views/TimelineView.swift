@@ -66,7 +66,7 @@ struct TimelineView: View {
                 AxisValueLabel().font(.system(.caption2, design: .monospaced)).foregroundStyle(Theme.muted)
             }
         }
-        .chartXAxisLabel(position: .bottom, alignment: .leading) { TrackedText("Simulated time · ms", size: 11) }
+        .chartXAxisLabel(position: .bottom, alignment: .leading) { TrackedText("Simulated time (ms)", size: 11) }
         .chartYAxisLabel(position: .leading, alignment: .top) { TrackedText("Dimers", size: 11) }
         .chartXScale(domain: .automatic(includesZero: false))
         .chartYScale(domain: 0 ... sim.count)

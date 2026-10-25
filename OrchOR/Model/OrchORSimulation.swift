@@ -47,7 +47,7 @@ final class OrchORSimulation {
     // Readouts
     private(set) var simTime: Double = 0
     private(set) var superposedCount = 0
-    private(set) var action: Double = 0        // ∫E_G dt, J·s
+    private(set) var action: Double = 0        // ∫E_G dt, J s
     private(set) var events: [OREvent] = []
     private(set) var history: [HistoryPoint] = []
     private var historyCounter = 0

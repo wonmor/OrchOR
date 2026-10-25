@@ -2,7 +2,7 @@ import Foundation
 
 /// Constants and formulas used throughout the app. Sources are listed in LearnView.
 enum Physics {
-    /// Reduced Planck constant, J·s.
+    /// Reduced Planck constant, J s.
     static let hbar = 1.054_571_817e-34
     /// Hameroff & Penrose (2014) calibrate the Diósi–Penrose criterion so that about 2×10¹⁰ tubulins in
     /// coherent superposition self-collapse in 25 ms (the 40 Hz gamma "conscious moment").
@@ -56,10 +56,10 @@ extension Double {
 }
 
 extension String {
-    /// "-34" → "⁻³⁴", "7.7" → "⁷·⁷", for exponents in readouts.
+    /// "-34" → "⁻³⁴", for integer exponents in readouts.
     var superscript: String {
         let table: [Character: Character] = ["0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶",
-                                           "7": "⁷", "8": "⁸", "9": "⁹", "-": "⁻", "+": "⁺", ".": "·"]
+                                           "7": "⁷", "8": "⁸", "9": "⁹", "-": "⁻", "+": "⁺"]
         return String(self.map { table[$0] ?? $0 })
     }
 }

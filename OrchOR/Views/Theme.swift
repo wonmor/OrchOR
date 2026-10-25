@@ -133,7 +133,7 @@ struct ScreenHeader<Trailing: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .center, spacing: 12) {
-                TrackedText("\(index)  ·  \(kicker)")
+                TrackedText("\(index)  |  \(kicker)")
                 Spacer(minLength: 8)
                 trailing()
             }

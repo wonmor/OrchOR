@@ -43,7 +43,7 @@ struct CalculatorView: View {
                 .fixedSize(horizontal: false, vertical: true)
             HRule()
             BauhausSlider(label: "Tubulins in coherent superposition", value: $logN, range: 6 ... 13, accent: Theme.yellow) {
-                "10" + String(format: "%.1f", $0).superscript
+                pow(10, $0).sci("", digits: 1)
             }
             // Result block: τ on a flat yellow field, with N, E_G and rate beside it on the grid.
             VStack(alignment: .leading, spacing: 2) {
@@ -74,8 +74,8 @@ struct CalculatorView: View {
             SectionTitle(text: "Timescales on a log axis", subtitle: "The whole argument is about whether coherence lasts long enough")
             LogScaleBars(items: [
                 ("Your τ", tau, Theme.yellow),
-                ("25 ms · 40 Hz", 0.025, Theme.blue),
-                ("500 ms · pre-conscious", 0.5, Theme.blue),
+                ("25 ms – 40 Hz", 0.025, Theme.blue),
+                ("500 ms – pre-conscious", 0.5, Theme.blue),
                 ("Hagan et al. decoherence", Physics.haganDecoherence, Theme.red),
                 ("Tegmark decoherence", Physics.tegmarkDecoherence, Theme.red),
             ])
