@@ -52,6 +52,8 @@ final class OrchORSimulation {
     private(set) var history: [HistoryPoint] = []
     private var historyCounter = 0
     private var lastSampleTime: Double = -1
+    /// Bumped when state is set outside `tick`, so views can redraw.
+    private(set) var stagedRevision = 0
 
     var effectiveTubulins: Double { Double(superposedCount) * pow(10, representationExponent) }
     var gravitationalSelfEnergy: Double { Physics.gravitationalSelfEnergy(tubulins: effectiveTubulins) }
@@ -153,4 +155,28 @@ final class OrchORSimulation {
             if history.count > 400 { history.removeFirst() }
         }
     }
+
+#if DEBUG
+    /// Screenshot staging, debug builds only: `-stage hero` runs the model for a while to fill the
+    /// timeline, then freezes it mid-collapse with every dimer state on screen at once.
+    func stageIfRequested() {
+        guard let stage = UserDefaults.standard.string(forKey: "stage") else { return }
+        for _ in 0 ..< 2400 { tick(realDt: 1.0 / 30) }
+        guard stage == "hero" else { stagedRevision += 1; return }
+        for i in 0 ..< count { lastCollapsed[i] = false; if states[i] == .superposed { states[i] = .a } }
+        for r in 0 ..< rings {
+            for p in 0 ..< protofilaments {
+                let i = index(proto: p, ring: r)
+                // A freshly collapsed band (red) beside a growing superposed patch (yellow).
+                if r >= 4 && r <= 13 && (p <= 5 || p == 12) { lastCollapsed[i] = true }
+                if r >= 15 && r <= 25 && (p >= 1 && p <= 7) { states[i] = .superposed; phase[i] = Float.random(in: 0 ..< 1) }
+            }
+        }
+        superposedCount = states.reduce(0) { $0 + ($1 == .superposed ? 1 : 0) }
+        action = Physics.hbar * 0.82
+        flash = 0.9
+        running = false
+        stagedRevision += 1
+    }
+#endif
 }

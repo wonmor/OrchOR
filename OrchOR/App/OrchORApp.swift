@@ -9,6 +9,9 @@ struct OrchORApp: App {
             ContentView()
                 .environment(sim)
                 .preferredColorScheme(.dark)
+                #if DEBUG
+                .onAppear { sim.stageIfRequested() }
+                #endif
         }
     }
 }
