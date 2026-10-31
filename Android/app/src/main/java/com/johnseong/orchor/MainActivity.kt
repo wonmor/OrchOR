@@ -56,7 +56,7 @@ private val tabs = listOf(
 )
 
 @Composable
-private fun App(state: SimState, startTab: Int, startAbout: Boolean) {
+internal fun App(state: SimState, startTab: Int, startAbout: Boolean) {
     var tab by rememberSaveable { mutableIntStateOf(startTab) }
     var about by rememberSaveable { mutableStateOf(startAbout) }
     var spin by remember { mutableFloatStateOf(0f) }

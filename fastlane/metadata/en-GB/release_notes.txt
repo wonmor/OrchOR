@@ -1,6 +1,7 @@
-A new dark Bauhaus look: ink fields, Futura type, and a strict red, yellow and blue palette across every screen.
+A complete Bauhaus redesign and a new icon.
 
-— The 3D microtubule now shows tubulin states in bone, blue, yellow (superposition) and red (objective reduction), so a collapse is easy to spot.
-— Timeline and Calculator charts redrawn with flat colour, thick rules and clearer axes; the timeline now zooms to the recent history instead of starting at zero.
-— Exponents read as proper superscripts (10⁻³⁴ J rather than 10^-34).
-— Larger, clearer Learn articles with numbered references.
+— White ground, black ink, Jost type, thick rules and square edges on every screen.
+— Colour now carries meaning everywhere: yellow is superposition, red is objective reduction and decoherence, blue is what you control. Tubulin states A and B are black and grey on the 3D lattice.
+— A colour key on the Learn tab.
+— New icon: two overlapping states above the ħ threshold, one state below.
+— Exponents read as proper superscripts, and the timeline follows the recent history.

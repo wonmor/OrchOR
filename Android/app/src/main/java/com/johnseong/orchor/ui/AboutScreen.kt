@@ -8,18 +8,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.johnseong.orchor.BuildConfig
 
 @Composable
 fun AboutScreen(onClose: () -> Unit) {
-    val ctx = LocalContext.current
-    val info = ctx.packageManager.getPackageInfo(ctx.packageName, 0)
-    @Suppress("DEPRECATION") val version = "${info.versionName} (${info.versionCode})"
+    val version = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})"
     Page {
         ScreenHeader("00", "About", "orch-or", Bauhaus.Yellow) {
             BauhausButton("Close", Icons.Outlined.Close, compact = true, onClick = onClose)
