@@ -15,15 +15,17 @@ struct ContentView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            // Keep scrolled content from drawing under the status bar: an ink strip fills the top safe area.
+            // Keep scrolled content from drawing under the status bar: a white strip fills the top safe area.
             .overlay(alignment: .top) {
                 Color.clear.frame(height: 0)
-                    .background(Theme.ink.ignoresSafeArea(edges: .top))
+                    .background(Theme.ground.ignoresSafeArea(edges: .top))
             }
             BauhausTabBar(selection: $tab)
         }
-        .background(Theme.ink.ignoresSafeArea())
-        .tint(Theme.yellow)
+        .background(Theme.ground.ignoresSafeArea())
+        .font(BFont.body)
+        .foregroundStyle(Theme.ink)
+        .tint(Theme.blue)
         .onChange(of: tab) { _, t in UserDefaults.standard.set(t, forKey: "tab") }
         .task {
             // Drive the simulation at ~30 fps while the app is in the foreground.
@@ -38,31 +40,31 @@ struct ContentView: View {
     }
 }
 
-/// Flat ink bar, 2 pt top rule, four columns split by 2 pt rules. The active column carries a thick
-/// colour bar along its top edge. Glyphs are SF Symbols line glyphs.
+/// White bar under a 4 pt black rule, four columns split by 2 pt rules. The selected column is a flat
+/// blue field (blue means selection throughout the app). Glyphs are SF Symbols.
 struct BauhausTabBar: View {
     @Binding var selection: Int
 
-    private struct Item { let title: String; let glyph: String; let accent: Color }
+    private struct Item { let title: String; let glyph: String }
     private let items: [Item] = [
-        Item(title: "Microtubule", glyph: "view.3d", accent: Theme.blue),
-        Item(title: "Timeline", glyph: "waveform.path.ecg", accent: Theme.yellow),
-        Item(title: "Calculator", glyph: "function", accent: Theme.red),
-        Item(title: "Learn", glyph: "book", accent: Theme.paper),
+        Item(title: "Microtubule", glyph: "view.3d"),
+        Item(title: "Timeline", glyph: "waveform.path.ecg"),
+        Item(title: "Calculator", glyph: "function"),
+        Item(title: "Learn", glyph: "book"),
     ]
 
     var body: some View {
         VStack(spacing: 0) {
-            HRule(color: Theme.paper.opacity(0.9))
+            HRule(height: Theme.thick)
             HStack(spacing: 0) {
                 ForEach(items.indices, id: \.self) { i in
-                    if i > 0 { Theme.rule.frame(width: Theme.ruleWidth).accessibilityHidden(true) }
+                    if i > 0 { VRule() }
                     button(i)
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
         }
-        .background(Theme.ink.ignoresSafeArea(edges: .bottom))
+        .background(Theme.ground.ignoresSafeArea(edges: .bottom))
         .dynamicTypeSize(...DynamicTypeSize.xLarge)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Tabs")
@@ -72,10 +74,9 @@ struct BauhausTabBar: View {
         let item = items[i]
         let on = selection == i
         return Button { selection = i } label: {
-            VStack(spacing: 6) {
-                (on ? item.accent : Color.clear).frame(height: Theme.barHeight)
+            VStack(spacing: 4) {
                 Image(systemName: item.glyph)
-                    .font(.system(size: 20, weight: on ? .semibold : .regular))
+                    .font(.system(size: 20, weight: on ? .bold : .regular))
                     .frame(height: 24)
                 Text(Theme.caps(item.title))
                     .font(BFont.label(11, relativeTo: .caption2))
@@ -83,10 +84,11 @@ struct BauhausTabBar: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.6)
                     .padding(.horizontal, 4)
-                    .padding(.bottom, 8)
             }
-            .foregroundStyle(on ? Theme.paper : Theme.muted)
+            .padding(.vertical, 10)
+            .foregroundStyle(on ? Theme.ground : Theme.ink)
             .frame(maxWidth: .infinity)
+            .background(on ? Theme.blue : Theme.ground)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

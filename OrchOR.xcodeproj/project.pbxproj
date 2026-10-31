@@ -9,31 +9,48 @@
 /* Begin PBXBuildFile section */
 		09773AFE47B00DBB07825097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */; };
 		0C53ACA185706FB61470BE84 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339C23E880D0707F8484945D /* AboutView.swift */; };
+		0DE74433C5F564E83DA94101 /* OrchORTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741233AC8840C687604FA12 /* OrchORTests.swift */; };
 		24BBA30B434C02962B3803B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E80BD967BDA8CE563DD7AC /* ContentView.swift */; };
 		533DBF9F9F53D69813C5BC91 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A6A934844B1C37F162F86D /* Theme.swift */; };
 		5A7B7274BD69113B8C1344C1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */; };
+		628EE530B28A79720FD5DCE1 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C3E891D7332E101C2ACB00EF /* OFL.txt */; };
 		84D3ED786F138109CAD048AE /* MicrotubuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44D47F7A762E7F26321242 /* MicrotubuleView.swift */; };
 		A2439EE50C5A8E8195F00CB4 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C66B93B8C11E69F1CC9D /* TimelineView.swift */; };
 		A2BF2D470171E09684557F97 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2B96F919547470D313523 /* LearnView.swift */; };
 		B4C61A468CD0E283393D774D /* OrchORApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7C1893B9E3DA4B8E63702 /* OrchORApp.swift */; };
+		C5590D8DF0772CF74F4DAB91 /* Jost-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DBE0A729C02C5BD30013540 /* Jost-Variable.ttf */; };
 		CBD8BDE86E5FB945EF4EECD6 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E63003C66326F311A3F80 /* Physics.swift */; };
 		D5E336339F5C5F43BFF51982 /* OrchORSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E3556FEC347D33F26183C /* OrchORSimulation.swift */; };
 		E5605AA50109D1445B7F839F /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C2A4FC96B8E4C2172D39E6 /* CalculatorView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		69E06134ABA36B7ED56D9176 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51C309F9E43A3DA036847D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 971E9401D17F8EE0E91654E3;
+			remoteInfo = OrchOR;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		26E80BD967BDA8CE563DD7AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		339C23E880D0707F8484945D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		3DBE0A729C02C5BD30013540 /* Jost-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Variable.ttf"; sourceTree = "<group>"; };
 		5B1E3556FEC347D33F26183C /* OrchORSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchORSimulation.swift; sourceTree = "<group>"; };
 		5D9250856DEB846460D1899C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		623E63003C66326F311A3F80 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
+		7741233AC8840C687604FA12 /* OrchORTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchORTests.swift; sourceTree = "<group>"; };
 		7F44D47F7A762E7F26321242 /* MicrotubuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrotubuleView.swift; sourceTree = "<group>"; };
 		8427C66B93B8C11E69F1CC9D /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		8683242EA87A1D553486331F /* OrchOR.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OrchOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF2B96F919547470D313523 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		94A6A934844B1C37F162F86D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B663DD7348B6DB861224789F /* OrchORTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OrchORTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E891D7332E101C2ACB00EF /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		EEE7C1893B9E3DA4B8E63702 /* OrchORApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchORApp.swift; sourceTree = "<group>"; };
 		F6C2A4FC96B8E4C2172D39E6 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,10 +82,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		324BD41A1EA9FD107C8A641C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3DBE0A729C02C5BD30013540 /* Jost-Variable.ttf */,
+				C3E891D7332E101C2ACB00EF /* OFL.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		66FB896B06156739911CBA4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8683242EA87A1D553486331F /* OrchOR.app */,
+				B663DD7348B6DB861224789F /* OrchORTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +105,7 @@
 			children = (
 				AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */,
 				06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */,
+				324BD41A1EA9FD107C8A641C /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -95,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				00D822A600A233FE01AA91A3 /* OrchOR */,
+				CF1A64A82EEB9AFE8781E035 /* OrchORTests */,
 				66FB896B06156739911CBA4E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +134,14 @@
 				EEE7C1893B9E3DA4B8E63702 /* OrchORApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		CF1A64A82EEB9AFE8781E035 /* OrchORTests */ = {
+			isa = PBXGroup;
+			children = (
+				7741233AC8840C687604FA12 /* OrchORTests.swift */,
+			);
+			path = OrchORTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +165,24 @@
 			productReference = 8683242EA87A1D553486331F /* OrchOR.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9C5E8E606434765FF97DF408 /* OrchORTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1826F646A88D5CD9D06F1CAC /* Build configuration list for PBXNativeTarget "OrchORTests" */;
+			buildPhases = (
+				ADE26EED7B59FF8505ED8303 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				165D236E7380C6F8F678391F /* PBXTargetDependency */,
+			);
+			name = OrchORTests;
+			packageProductDependencies = (
+			);
+			productName = OrchORTests;
+			productReference = B663DD7348B6DB861224789F /* OrchORTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -138,6 +193,10 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					971E9401D17F8EE0E91654E3 = {
+						DevelopmentTeam = Z64KRUX3W3;
+						ProvisioningStyle = Automatic;
+					};
+					9C5E8E606434765FF97DF408 = {
 						DevelopmentTeam = Z64KRUX3W3;
 						ProvisioningStyle = Automatic;
 					};
@@ -158,6 +217,7 @@
 			projectRoot = "";
 			targets = (
 				971E9401D17F8EE0E91654E3 /* OrchOR */,
+				9C5E8E606434765FF97DF408 /* OrchORTests */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				09773AFE47B00DBB07825097 /* Assets.xcassets in Resources */,
+				C5590D8DF0772CF74F4DAB91 /* Jost-Variable.ttf in Resources */,
+				628EE530B28A79720FD5DCE1 /* OFL.txt in Resources */,
 				5A7B7274BD69113B8C1344C1 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,7 +254,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADE26EED7B59FF8505ED8303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DE74433C5F564E83DA94101 /* OrchORTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		165D236E7380C6F8F678391F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 971E9401D17F8EE0E91654E3 /* OrchOR */;
+			targetProxy = 69E06134ABA36B7ED56D9176 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0B05A5DA7A8068C6B1D0AE39 /* Debug */ = {
@@ -232,7 +310,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -285,6 +363,23 @@
 			};
 			name = Release;
 		};
+		4FC86FDDCDDBC19BDA687A2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.OrchORTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrchOR.app/OrchOR";
+			};
+			name = Release;
+		};
 		B231CD2D5ED137CAD3296A66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -322,7 +417,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -350,6 +445,23 @@
 			};
 			name = Release;
 		};
+		B610B8CF33787635198AB091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.OrchORTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrchOR.app/OrchOR";
+			};
+			name = Debug;
+		};
 		BD4C493DC2A5EF315B371753 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -371,6 +483,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1826F646A88D5CD9D06F1CAC /* Build configuration list for PBXNativeTarget "OrchORTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B610B8CF33787635198AB091 /* Debug */,
+				4FC86FDDCDDBC19BDA687A2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		B266942A2355C48B49E1ED10 /* Build configuration list for PBXNativeTarget "OrchOR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

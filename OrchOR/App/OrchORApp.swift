@@ -8,7 +8,7 @@ struct OrchORApp: App {
         WindowGroup {
             ContentView()
                 .environment(sim)
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(.light)
                 #if DEBUG
                 .onAppear { sim.stageIfRequested() }
                 #endif

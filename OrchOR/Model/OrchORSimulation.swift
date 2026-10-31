@@ -9,6 +9,28 @@ struct OREvent: Identifiable {
     let tau: Double
 }
 
+/// SplitMix64 (Steele, Lea & Flood 2014). Small, fast and fully specified, so the Android port can draw
+/// the identical sequence from the same seed and its tests can compare runs with this model step for step.
+struct SplitMix64 {
+    private(set) var state: UInt64
+    init(seed: UInt64) { state = seed }
+
+    mutating func next() -> UInt64 {
+        state &+= 0x9E37_79B9_7F4A_7C15
+        var z = state
+        z = (z ^ (z >> 30)) &* 0xBF58_476D_1CE4_E5B9
+        z = (z ^ (z >> 27)) &* 0x94D0_49BB_1331_11EB
+        return z ^ (z >> 31)
+    }
+    /// Uniform in [0, 1) with 53 random bits.
+    mutating func nextDouble() -> Double { Double(next() >> 11) * 0x1.0p-53 }
+    /// Uniform in [0, 1) with 24 random bits.
+    mutating func nextFloat() -> Float { Float(next() >> 40) * 0x1.0p-24 }
+    /// Uniform in 0 ..< n.
+    mutating func nextInt(_ n: Int) -> Int { Int(nextDouble() * Double(n)) }
+    mutating func nextBool() -> Bool { next() >> 63 == 1 }
+}
+
 struct HistoryPoint: Identifiable {
     let id: Int
     let simTime: Double
@@ -67,15 +89,19 @@ final class OrchORSimulation {
         return span > 0 ? Double(recent.count - 1) / span : nil
     }
 
-    init() {
+    @ObservationIgnored private var rng: SplitMix64
+
+    /// `seed` makes a run reproducible (tests, and the Android parity check); by default each launch differs.
+    init(seed: UInt64 = UInt64.random(in: .min ... .max)) {
+        rng = SplitMix64(seed: seed)
         states = [DimerState](repeating: .a, count: 13 * 30)
         phase = [Float](repeating: 0, count: 13 * 30)
         lastCollapsed = [Bool](repeating: false, count: 13 * 30)
-        for i in 0 ..< states.count where Bool.random() { states[i] = .b }
+        for i in 0 ..< states.count where rng.nextBool() { states[i] = .b }
     }
 
     func reset() {
-        for i in 0 ..< states.count { states[i] = Bool.random() ? .a : .b; phase[i] = 0; lastCollapsed[i] = false }
+        for i in 0 ..< states.count { states[i] = rng.nextBool() ? .a : .b; phase[i] = 0; lastCollapsed[i] = false }
         superposedCount = 0; action = 0; simTime = 0; flash = 0
         events = []; history = []; historyCounter = 0; lastSampleTime = -1
     }
@@ -101,26 +127,26 @@ final class OrchORSimulation {
 
         // 1. Spontaneous seeds: a few dimers enter superposition on their own.
         let seedRate = 0.03 * dtMs
-        if Double.random(in: 0 ..< 1) < seedRate {
-            let i = Int.random(in: 0 ..< count)
-            if states[i] != .superposed { states[i] = .superposed; phase[i] = Float.random(in: 0 ..< 1) }
+        if rng.nextDouble() < seedRate {
+            let i = rng.nextInt(count)
+            if states[i] != .superposed { states[i] = .superposed; phase[i] = rng.nextFloat() }
         }
 
         // 2. Orchestration: superposed dimers recruit neighbours.
         let recruit = min(1, orchestration * 0.5 * dtMs)
         var newly: [Int] = []
         for i in 0 ..< count where states[i] == .superposed {
-            for n in neighbours(of: i) where states[n] != .superposed && Double.random(in: 0 ..< 1) < recruit {
+            for n in neighbours(of: i) where states[n] != .superposed && rng.nextDouble() < recruit {
                 newly.append(n)
             }
         }
-        for n in newly { states[n] = .superposed; phase[n] = Float.random(in: 0 ..< 1) }
+        for n in newly { states[n] = .superposed; phase[n] = rng.nextFloat() }
 
         // 3. Environmental decoherence, if enabled: superpositions die at rate 1/t_dec.
         if decoherenceEnabled {
             let p = min(1, dt / decoherenceTime)
-            for i in 0 ..< count where states[i] == .superposed && Double.random(in: 0 ..< 1) < p {
-                states[i] = Bool.random() ? .a : .b
+            for i in 0 ..< count where states[i] == .superposed && rng.nextDouble() < p {
+                states[i] = rng.nextBool() ? .a : .b
             }
         }
 
@@ -139,7 +165,7 @@ final class OrchORSimulation {
             events.append(OREvent(simTime: simTime, tubulins: n, effectiveTubulins: effectiveTubulins, tau: tau))
             for i in 0 ..< count {
                 lastCollapsed[i] = states[i] == .superposed
-                if states[i] == .superposed { states[i] = Bool.random() ? .a : .b }
+                if states[i] == .superposed { states[i] = rng.nextBool() ? .a : .b }
             }
             superposedCount = 0
             action = 0
@@ -163,14 +189,14 @@ final class OrchORSimulation {
         guard let stage = UserDefaults.standard.string(forKey: "stage") else { return }
         for _ in 0 ..< 2400 { tick(realDt: 1.0 / 30) }
         guard stage == "hero" else { stagedRevision += 1; return }
-        for i in 0 ..< count { lastCollapsed[i] = false; states[i] = Bool.random() ? .a : .b }
+        for i in 0 ..< count { lastCollapsed[i] = false; states[i] = rng.nextBool() ? .a : .b }
         for r in 0 ..< rings {
             for p in 0 ..< protofilaments {
                 let i = index(proto: p, ring: r)
                 // A freshly collapsed band (red) beside a growing superposed patch (yellow).
                 // Bands around the whole tube, so the picture holds while the lattice spins.
                 if r >= 3 && r <= 12 && p != 6 && p != 7 { lastCollapsed[i] = true }
-                if r >= 15 && r <= 25 && !(r >= 23 && p >= 9) { states[i] = .superposed; phase[i] = Float.random(in: 0 ..< 1) }
+                if r >= 15 && r <= 25 && !(r >= 23 && p >= 9) { states[i] = .superposed; phase[i] = rng.nextFloat() }
             }
         }
         superposedCount = states.reduce(0) { $0 + ($1 == .superposed ? 1 : 0) }

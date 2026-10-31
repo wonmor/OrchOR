@@ -23,7 +23,7 @@ struct TimelineView: View {
             }
             .pageFrame()
         }
-        .background(Theme.ink)
+        .background(Theme.ground)
     }
 
     private var chartPanel: some View {
@@ -31,7 +31,7 @@ struct TimelineView: View {
             SectionTitle(text: "Coherent superposition", subtitle: "Dimers in superposition, with each objective-reduction event as a vertical red rule")
             HStack(spacing: 18) {
                 KeyRow(glyph: "arrow.up.arrow.down", color: Theme.yellow, text: "Superposed dimers")
-                KeyRow(glyph: "bolt", color: Theme.redText, text: "OR event")
+                KeyRow(glyph: "bolt", color: Theme.red, text: "OR event")
             }
             chart.frame(height: hSize == .regular ? 360 : 240)
         }
@@ -42,9 +42,9 @@ struct TimelineView: View {
         Chart {
             ForEach(sim.history) { p in
                 AreaMark(x: .value("t", p.simTime * 1000), y: .value("superposed", p.superposed))
-                    .foregroundStyle(Theme.yellow.opacity(0.22))
+                    .foregroundStyle(Theme.yellow.opacity(0.55))
                 LineMark(x: .value("t", p.simTime * 1000), y: .value("superposed", p.superposed))
-                    .foregroundStyle(Theme.yellow)
+                    .foregroundStyle(Theme.ink)
                     .lineStyle(StrokeStyle(lineWidth: 2, lineCap: .butt, lineJoin: .miter))
             }
             ForEach(sim.events.filter { e in sim.history.first.map { e.simTime >= $0.simTime } ?? false }) { e in
@@ -55,15 +55,15 @@ struct TimelineView: View {
         }
         .chartXAxis {
             AxisMarks(values: .automatic(desiredCount: 5)) { _ in
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 1)).foregroundStyle(Theme.rule)
-                AxisTick(length: 6, stroke: StrokeStyle(lineWidth: 2)).foregroundStyle(Theme.paper)
-                AxisValueLabel().font(.system(.caption2, design: .monospaced)).foregroundStyle(Theme.muted)
+                AxisGridLine(stroke: StrokeStyle(lineWidth: 1)).foregroundStyle(Theme.hairline)
+                AxisTick(length: 6, stroke: StrokeStyle(lineWidth: 2)).foregroundStyle(Theme.ink)
+                AxisValueLabel().font(BFont.number(11, relativeTo: .caption2)).foregroundStyle(Theme.inkSecondary)
             }
         }
         .chartYAxis {
             AxisMarks(position: .leading, values: .automatic(desiredCount: 4)) { _ in
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 1)).foregroundStyle(Theme.rule)
-                AxisValueLabel().font(.system(.caption2, design: .monospaced)).foregroundStyle(Theme.muted)
+                AxisGridLine(stroke: StrokeStyle(lineWidth: 1)).foregroundStyle(Theme.hairline)
+                AxisValueLabel().font(BFont.number(11, relativeTo: .caption2)).foregroundStyle(Theme.inkSecondary)
             }
         }
         .chartXAxisLabel(position: .bottom, alignment: .leading) { TrackedText("Simulated time (ms)", size: 11) }
@@ -71,9 +71,9 @@ struct TimelineView: View {
         .chartXScale(domain: .automatic(includesZero: false))
         .chartYScale(domain: 0 ... sim.count)
         .chartPlotStyle { plot in
-            plot.background(Theme.ink)
-                .overlay(alignment: .bottom) { Theme.paper.frame(height: Theme.ruleWidth) }
-                .overlay(alignment: .leading) { Theme.paper.frame(width: Theme.ruleWidth) }
+            plot.background(Theme.ground)
+                .overlay(alignment: .bottom) { Theme.ink.frame(height: Theme.rule) }
+                .overlay(alignment: .leading) { Theme.ink.frame(width: Theme.rule) }
         }
         .accessibilityLabel("Chart of superposed dimers over simulated time")
         .accessibilityValue("\(sim.events.count) objective-reduction events so far")
@@ -84,25 +84,22 @@ struct TimelineView: View {
             TrackedText("Current event rate")
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text(sim.eventFrequencyHz.map { String(format: "%.0f", $0) } ?? "—")
-                    .font(BFont.display(64))
-                    .foregroundStyle(Theme.paper)
+                    .font(BFont.display(72))
+                    .foregroundStyle(Theme.ink)
                     .lineLimit(1).minimumScaleFactor(0.5)
-                Text("Hz").font(BFont.heading()).foregroundStyle(Theme.muted)
+                Text("Hz").font(BFont.heading()).foregroundStyle(Theme.inkSecondary)
             }
             HRule()
-            Text("Hameroff & Penrose associate conscious moments with gamma synchrony, roughly 40 Hz: one event every 25 ms.")
-                .font(.footnote).foregroundStyle(Theme.muted)
-                .fixedSize(horizontal: false, vertical: true)
+            Note("Hameroff & Penrose associate conscious moments with gamma synchrony, roughly 40 Hz: one event every 25 ms.")
         }
-        .panel(accent: Theme.blue)
+        .panel(accent: Theme.red)
     }
 
     private var momentsPanel: some View {
         VStack(alignment: .leading, spacing: 10) {
             SectionTitle(text: "Recent moments", subtitle: "Each OR event is, in the theory, a discrete moment of experience")
             if sim.events.isEmpty {
-                Text("No events yet. Let the simulation run on the Microtubule tab.")
-                    .font(.footnote).foregroundStyle(Theme.muted)
+                Note("No events yet. Let the simulation run on the Microtubule tab.")
             } else {
                 Grid(alignment: .leading, horizontalSpacing: 12, verticalSpacing: 8) {
                     GridRow {
@@ -111,18 +108,18 @@ struct TimelineView: View {
                         TrackedText("Tubulins", size: 11)
                         TrackedText("τ", size: 11).gridColumnAlignment(.trailing)
                     }
-                    GridRow { HRule(color: Theme.paper.opacity(0.9)).gridCellColumns(4) }
+                    GridRow { HRule().gridCellColumns(4) }
                     ForEach(sim.events.suffix(8).reversed()) { e in
                         GridRow {
                             Text(String(format: "%.1f ms", e.simTime * 1000))
                             Text("\(e.tubulins)")
                             Text(e.effectiveTubulins.compact)
-                            Text(e.tau.timeString).foregroundStyle(Theme.yellow).gridColumnAlignment(.trailing)
+                            Text(e.tau.timeString).fontWeight(.semibold).gridColumnAlignment(.trailing)
                         }
-                        .font(.system(.footnote, design: .monospaced))
-                        .foregroundStyle(Theme.paper)
+                        .font(BFont.number(14, relativeTo: .footnote))
+                        .foregroundStyle(Theme.ink)
                         .accessibilityElement(children: .combine)
-                        GridRow { HRule(height: 1).gridCellColumns(4) }
+                        GridRow { HRule(color: Theme.hairline, height: 1).gridCellColumns(4) }
                     }
                 }
             }
