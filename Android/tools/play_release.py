@@ -16,8 +16,11 @@ import base64, glob, json, os, subprocess, sys, tempfile, time, urllib.error, ur
 PKG = "com.johnseong.orchor"
 LANG = "en-GB"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-AAB = os.path.join(ROOT, "app", "build", "outputs", "bundle", "release", "app-release.aab")
 PLAY = os.path.expanduser(os.environ.get("PLAY_DIR", "~/Documents/sr-video/screens/orchor/play"))
+# The signed AAB is kept beside the listing (build outputs get cleaned); fall back to the Gradle output.
+AAB = next((p for p in (os.environ.get("AAB"), os.path.join(PLAY, "orchor-1.1-release.aab"),
+                        os.path.join(ROOT, "app", "build", "outputs", "bundle", "release", "app-release.aab"))
+            if p and os.path.exists(p)), os.path.join(PLAY, "orchor-1.1-release.aab"))
 API = "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/" + PKG
 UPLOAD = "https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications/" + PKG
 NOTES = ("First Android release. Watch tubulin superposition grow across a 3D microtubule and collapse "

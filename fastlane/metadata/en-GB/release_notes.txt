@@ -3,5 +3,5 @@ A complete Bauhaus redesign and a new icon.
 — White ground, black ink, Jost type, thick rules and square edges on every screen.
 — Colour now carries meaning everywhere: yellow is superposition, red is objective reduction and decoherence, blue is what you control. Tubulin states A and B are black and grey on the 3D lattice.
 — A colour key on the Learn tab.
-— New icon: two overlapping states above the ħ threshold, one state below.
+— New icon: a 3D render of a microtubule, with tubulin dimers in superposition and a red flash of objective reduction.
 — Exponents read as proper superscripts, and the timeline follows the recent history.
