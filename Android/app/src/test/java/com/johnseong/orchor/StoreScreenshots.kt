@@ -33,7 +33,7 @@ class StoreScreenshots(private val device: String) {
         }
     }
 
-    @get:Rule val paparazzi = Paparazzi(deviceConfig = config(device), maxPercentDifference = 1.0)
+    @get:Rule val paparazzi = Paparazzi(deviceConfig = config(device), maxPercentDifference = 1.0, useDeviceResolution = true)
 
     private fun staged(stage: String) = SimState(OrchORSimulation(seed = 2026uL)).apply { update { stage(stage) } }
 
