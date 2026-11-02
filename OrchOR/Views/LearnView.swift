@@ -50,6 +50,7 @@ struct LearnView: View {
                     ForEach(Array(cards.enumerated()), id: \.element.id) { i, c in article(i, c) }
                 }
                 referencesPanel
+                SupportLink()
             }
             .pageFrame()
         }

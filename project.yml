@@ -10,8 +10,8 @@ settings:
     CODE_SIGN_STYLE: Automatic
     SWIFT_VERSION: "5.0"
     SWIFT_STRICT_CONCURRENCY: minimal
-    MARKETING_VERSION: "1.1"
-    CURRENT_PROJECT_VERSION: "3"
+    MARKETING_VERSION: "1.2"
+    CURRENT_PROJECT_VERSION: "4"
     TARGETED_DEVICE_FAMILY: "1,2"
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -56,6 +56,8 @@ targets:
     platform: iOS
     sources:
       - path: OrchORTests
+      - path: StoreKit/TipJar.storekit
+        buildPhase: resources
     dependencies:
       - target: OrchOR
     settings:
@@ -68,6 +70,8 @@ schemes:
       targets:
         OrchOR: all
         OrchORTests: [test]
+    run:
+      storeKitConfiguration: StoreKit/TipJar.storekit
     test:
       targets:
         - OrchORTests

@@ -11,4 +11,4 @@ The simulation is a teaching model, not a physical one. Orch-OR is a minority vi
 
 A clean Bauhaus design throughout: white ground, black ink, Jost type, and three primaries that each mean one thing — yellow for superposition, red for collapse and decoherence, blue for the controls you touch.
 
-No account, no network, no data collection.
+No account, no ads, no data collection. An optional tip jar in About lets you support development; tips unlock nothing and everything stays free.

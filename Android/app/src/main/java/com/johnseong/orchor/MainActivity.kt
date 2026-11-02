@@ -27,10 +27,13 @@ import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.johnseong.orchor.billing.TipJarBilling
+import com.johnseong.orchor.billing.TipJarUi
 import com.johnseong.orchor.ui.*
 
 class MainActivity : ComponentActivity() {
     private val state = SimState()
+    private lateinit var billing: TipJarBilling
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge(
@@ -43,7 +46,14 @@ class MainActivity : ComponentActivity() {
         val startTab = if (debuggable) intent.getIntExtra("tab", 0).coerceIn(0, 3) else 0
         if (debuggable && savedInstanceState == null) intent.getStringExtra("stage")?.let { s -> state.update { stage(s) } }
         val startAbout = debuggable && intent.getBooleanExtra("about", false)
-        setContent { App(state, startTab, startAbout) }
+        billing = TipJarBilling(this)
+        val actions = TipJarActions(onTip = { billing.tip(this, it) }, onRetry = { billing.retry() }, onDismiss = { billing.dismiss() })
+        setContent { App(state, startTab, startAbout, billing.ui, actions, onTipJarShown = { billing.start() }) }
+    }
+
+    override fun onDestroy() {
+        billing.close()
+        super.onDestroy()
     }
 }
 
@@ -56,9 +66,13 @@ private val tabs = listOf(
 )
 
 @Composable
-internal fun App(state: SimState, startTab: Int, startAbout: Boolean) {
+internal fun App(state: SimState, startTab: Int, startAbout: Boolean, tips: TipJarUi = TipJarUi(),
+                 tipActions: TipJarActions = TipJarActions(), startTipJar: Boolean = false, onTipJarShown: () -> Unit = {}) {
     var tab by rememberSaveable { mutableIntStateOf(startTab) }
     var about by rememberSaveable { mutableStateOf(startAbout) }
+    var tipJar by rememberSaveable { mutableStateOf(startTipJar) }
+    // Billing connects only when the tip jar is first shown (About or the Learn link), never at launch.
+    LaunchedEffect(about || tipJar) { if (about || tipJar) onTipJarShown() }
     var spin by remember { mutableFloatStateOf(0f) }
     // Drive the simulation from the frame clock while the app is in the foreground.
     LaunchedEffect(Unit) {
@@ -74,18 +88,19 @@ internal fun App(state: SimState, startTab: Int, startAbout: Boolean) {
             }
         }
     }
-    BackHandler(enabled = about) { about = false }
+    BackHandler(enabled = about || tipJar) { about = false; tipJar = false }
     Column(Modifier.fillMaxSize().background(Bauhaus.Ground).safeDrawingPadding()) {
         Box(Modifier.weight(1f)) {
-            if (about) AboutScreen { about = false }
+            if (about) AboutScreen(tips, tipActions) { about = false }
+            else if (tipJar) TipJarScreen(tips, tipActions) { tipJar = false }
             else when (tab) {
                 0 -> MicrotubuleScreen(state, spin) { about = true }
                 1 -> TimelineScreen(state)
                 2 -> CalculatorScreen()
-                else -> LearnScreen()
+                else -> LearnScreen { tipJar = true }
             }
         }
-        if (!about) TabBar(tab) { tab = it }
+        if (!about && !tipJar) TabBar(tab) { tab = it }
     }
 }
 

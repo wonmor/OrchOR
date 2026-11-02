@@ -7,6 +7,7 @@ struct MicrotubuleView: View {
     @Environment(\.horizontalSizeClass) private var hSize
     @State private var scene = MicrotubuleScene()
     @State private var showAbout = false
+    @State private var showTipJar = false
 
     var body: some View {
         @Bindable var sim = sim
@@ -32,12 +33,14 @@ struct MicrotubuleView: View {
         }
         .background(Theme.ground)
         .sheet(isPresented: $showAbout) { AboutView() }
+        .sheet(isPresented: $showTipJar) { TipJarSheet() }
         .onChange(of: sim.simTime) { _, _ in scene.apply(sim) }
         .onChange(of: sim.stagedRevision) { _, _ in scene.apply(sim) }
         .onAppear {
             scene.apply(sim)
             #if DEBUG
             if UserDefaults.standard.bool(forKey: "showAbout") { showAbout = true }
+            if UserDefaults.standard.bool(forKey: "showTipJar") { showTipJar = true }
             #endif
         }
     }

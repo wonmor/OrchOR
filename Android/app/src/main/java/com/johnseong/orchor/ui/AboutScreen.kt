@@ -14,9 +14,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.johnseong.orchor.BuildConfig
+import com.johnseong.orchor.billing.TipJarUi
 
 @Composable
-fun AboutScreen(onClose: () -> Unit) {
+fun AboutScreen(tips: TipJarUi, tipActions: TipJarActions, onClose: () -> Unit) {
     val version = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})"
     Page {
         ScreenHeader("00", "About", "orch-or", Bauhaus.Yellow) {
@@ -35,7 +36,8 @@ fun AboutScreen(onClose: () -> Unit) {
             "An interactive model of the Penrose–Hameroff theory of consciousness: microtubules, tubulin superposition, and objective reduction.")
         Block("What the simulation is, and isn't", Bauhaus.Red,
             "The lattice, the growth of coherence and the collapse rule ∫E_G dt ≥ ħ follow the theory's own description, with the Diósi–Penrose timescale calibrated to Hameroff & Penrose (2014). Recruitment rates, seeding and the choice of post-collapse states are illustrative. It is a teaching model, not a physical simulation, and the theory itself is contested; see the Learn tab for both sides.")
-        Block("Privacy", Bauhaus.Blue, "The app runs entirely on your device and collects no data.")
+        Block("Privacy", Bauhaus.Blue, "The app runs entirely on your device and collects no data. Tips go through Google Play; the app never sees your payment details.")
+        TipJarPanel(tips, tipActions)
     }
 }
 

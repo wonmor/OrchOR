@@ -7,6 +7,8 @@ The app must first exist in Play Console (created by hand) and the service accou
     python3 tools/play_release.py listing      # en-GB texts, icon, feature graphic, screenshots
     python3 tools/play_release.py internal     # upload the AAB to the internal track
     python3 tools/play_release.py production   # promote that versionCode to production
+    python3 tools/play_release.py production draft   # while the app is still a draft in Play Console
+    python3 tools/play_release.py products     # tip jar in-app products (needs an uploaded AAB with billing first)
 
 Key: PLAY_SA_JSON (default ~/Documents/keys/havit-play.json). Listing assets come from PLAY_DIR
 (default ~/Documents/sr-video/screens/orchor/play). Never prints keys.
@@ -18,12 +20,12 @@ LANG = "en-GB"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLAY = os.path.expanduser(os.environ.get("PLAY_DIR", "~/Documents/sr-video/screens/orchor/play"))
 # The signed AAB is kept beside the listing (build outputs get cleaned); fall back to the Gradle output.
-AAB = next((p for p in (os.environ.get("AAB"), os.path.join(PLAY, "orchor-1.1-release.aab"),
+AAB = next((p for p in (os.environ.get("AAB"), os.path.join(PLAY, "orchor-1.2-release.aab"),
                         os.path.join(ROOT, "app", "build", "outputs", "bundle", "release", "app-release.aab"))
-            if p and os.path.exists(p)), os.path.join(PLAY, "orchor-1.1-release.aab"))
+            if p and os.path.exists(p)), os.path.join(PLAY, "orchor-1.2-release.aab"))
 API = "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/" + PKG
 UPLOAD = "https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications/" + PKG
-NOTES = ("First Android release. Watch tubulin superposition grow across a 3D microtubule and collapse "
+NOTES = ("First Android release, with an optional tip jar in About. Watch tubulin superposition grow across a 3D microtubule and collapse "
          "under the Penrose–Hameroff theory, with a live timeline, a Diósi–Penrose calculator and both "
          "sides of the debate.")
 
@@ -110,7 +112,7 @@ def internal():
     vc = up["versionCode"]
     print("uploaded versionCode", vc)
     print("track", call(API + f"/edits/{eid}/tracks/internal", "PUT", {"track": "internal", "releases": [
-        {"name": f"1.1 ({vc})", "versionCodes": [str(vc)], "status": "completed",
+        {"name": f"1.2 ({vc})", "versionCodes": [str(vc)], "status": "completed",
          "releaseNotes": [{"language": LANG, "text": NOTES}]}]}).get("track"))
     commit(eid)
 
@@ -120,9 +122,50 @@ def production():
     rel = call(API + f"/edits/{eid}/tracks/internal")
     vcs = rel["releases"][0]["versionCodes"]
     print("track", call(API + f"/edits/{eid}/tracks/production", "PUT", {"track": "production", "releases": [
-        {"name": f"1.1 ({vcs[0]})", "versionCodes": vcs, "status": "completed",
+        {"name": f"1.2 ({vcs[0]})", "versionCodes": vcs, "status": sys.argv[2] if len(sys.argv) > 2 else "completed",
          "releaseNotes": [{"language": LANG, "text": NOTES}]}]}))
     commit(eid)
+
+
+# Tip jar: managed products the app consumes after purchase, so they unlock nothing and can be bought again.
+# Prices are USD whole dollars; Play converts the other countries. Names/descriptions match the App Store.
+TIPS = [("orchor.tip.1", "Small tip", "A small thank-you. Unlocks nothing.", 1),
+        ("orchor.tip.20", "Generous tip", "A generous thank-you. Unlocks nothing.", 20),
+        ("orchor.tip.50", "Big tip", "A big thank-you. Unlocks nothing.", 50),
+        ("orchor.tip.100", "Huge tip", "A huge thank-you. Unlocks nothing.", 100)]
+
+
+def money(m):
+    return {k: m[k] for k in ("currencyCode", "units", "nanos") if k in m}
+
+
+def products():
+    """One-time products via monetization.onetimeproducts (the legacy inappproducts API is refused).
+    US price is set exactly; other regions use Play's own conversion of the USD price."""
+    for sku, title, desc, usd in TIPS:
+        conv = call(API + "/pricing:convertRegionPrices", "POST", {"price": {"currencyCode": "USD", "units": str(usd)}})
+        if "convertedRegionPrices" not in conv:
+            sys.exit(f"price conversion failed: {conv}")
+        regions = [{"regionCode": rc, "price": money(v["price"]), "availability": "AVAILABLE"}
+                   for rc, v in conv["convertedRegionPrices"].items() if rc != "US"]
+        regions.append({"regionCode": "US", "price": {"currencyCode": "USD", "units": str(usd)}, "availability": "AVAILABLE"})
+        other = conv.get("convertedOtherRegionsPrice", {})
+        opt = {"purchaseOptionId": "tip", "buyOption": {"legacyCompatible": True, "multiQuantityEnabled": False},
+               "regionalPricingAndAvailabilityConfigs": regions}
+        if other.get("usdPrice") and other.get("eurPrice"):
+            opt["newRegionsConfig"] = {"usdPrice": money(other["usdPrice"]), "eurPrice": money(other["eurPrice"]),
+                                       "availability": "AVAILABLE"}
+        body = {"packageName": PKG, "productId": sku,
+                "listings": [{"languageCode": loc, "title": title, "description": desc} for loc in (LANG, "en-US")],
+                "purchaseOptions": [opt]}
+        q = "?allowMissing=true&updateMask=listings,purchaseOptions&regionsVersion.version=2026/01"
+        r = call(API + f"/onetimeproducts/{sku}{q}", "PATCH", body)
+        if r.get("productId") != sku:
+            print(sku, "FAILED", r); continue
+        a = call(API + f"/oneTimeProducts/{sku}/purchaseOptions:batchUpdateStates", "POST", {"requests": [
+            {"activatePurchaseOptionRequest": {"packageName": PKG, "productId": sku, "purchaseOptionId": "tip"}}]})
+        state = [o.get("state") for p in a.get("oneTimeProducts", []) for o in p.get("purchaseOptions", [])]
+        print(sku, f"{len(regions)} regions", "state", state or a)
 
 
 def check():
@@ -135,4 +178,4 @@ def check():
 
 
 if __name__ == "__main__":
-    {"check": check, "listing": listing, "internal": internal, "production": production}[sys.argv[1] if len(sys.argv) > 1 else "check"]()
+    {"check": check, "listing": listing, "internal": internal, "production": production, "products": products}[sys.argv[1] if len(sys.argv) > 1 else "check"]()

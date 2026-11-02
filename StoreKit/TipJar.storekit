@@ -1,0 +1,109 @@
+{
+  "appPolicies": {
+    "eula": "",
+    "policies": [
+      {
+        "locale": "en_US",
+        "policyText": "",
+        "policyURL": ""
+      }
+    ]
+  },
+  "identifier": "7A3C1D20",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "1.00",
+      "familyShareable": false,
+      "internalID": "A8DF1BC80",
+      "localizations": [
+        {
+          "description": "A small thank-you. Unlocks nothing.",
+          "displayName": "Small tip",
+          "locale": "en_GB"
+        },
+        {
+          "description": "A small thank-you. Unlocks nothing.",
+          "displayName": "Small tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "orchor.tip.1",
+      "referenceName": "Small tip (orchor.tip.1)",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "20.00",
+      "familyShareable": false,
+      "internalID": "2CF240CF0",
+      "localizations": [
+        {
+          "description": "A generous thank-you. Unlocks nothing.",
+          "displayName": "Generous tip",
+          "locale": "en_GB"
+        },
+        {
+          "description": "A generous thank-you. Unlocks nothing.",
+          "displayName": "Generous tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "orchor.tip.20",
+      "referenceName": "Generous tip (orchor.tip.20)",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "50.00",
+      "familyShareable": false,
+      "internalID": "DA37DF950",
+      "localizations": [
+        {
+          "description": "A big thank-you. Unlocks nothing.",
+          "displayName": "Big tip",
+          "locale": "en_GB"
+        },
+        {
+          "description": "A big thank-you. Unlocks nothing.",
+          "displayName": "Big tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "orchor.tip.50",
+      "referenceName": "Big tip (orchor.tip.50)",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "100.00",
+      "familyShareable": false,
+      "internalID": "FB00636F0",
+      "localizations": [
+        {
+          "description": "A huge thank-you. Unlocks nothing.",
+          "displayName": "Huge tip",
+          "locale": "en_GB"
+        },
+        {
+          "description": "A huge thank-you. Unlocks nothing.",
+          "displayName": "Huge tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "orchor.tip.100",
+      "referenceName": "Huge tip (orchor.tip.100)",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_applicationInternalID": "6819059305",
+    "_developerTeamID": "Z64KRUX3W3",
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 4,
+    "minor": 0
+  }
+}

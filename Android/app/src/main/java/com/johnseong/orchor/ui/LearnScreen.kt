@@ -77,7 +77,7 @@ fun BrandMark(size: Dp = 56.dp) {
 }
 
 @Composable
-fun LearnScreen() {
+fun LearnScreen(onSupport: () -> Unit = {}) {
     Page {
         ScreenHeader("04", "The theory, both sides", "learn", Bauhaus.Yellow)
         Panel {
@@ -121,6 +121,7 @@ fun LearnScreen() {
                 if (i < sources.size - 1) HRule(Bauhaus.Hairline, 1.dp)
             }
         }
+        SupportLink(onSupport)
     }
 }
 

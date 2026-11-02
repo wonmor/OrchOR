@@ -5,6 +5,8 @@ import app.cash.paparazzi.Paparazzi
 import com.android.resources.Density
 import com.android.resources.ScreenOrientation
 import com.johnseong.orchor.model.OrchORSimulation
+import com.johnseong.orchor.billing.TipJarUi
+import com.johnseong.orchor.billing.TipStatus
 import com.johnseong.orchor.ui.SimState
 import org.junit.Rule
 import org.junit.Test
@@ -42,4 +44,7 @@ class StoreScreenshots(private val device: String) {
     @Test fun s3_calculator() = paparazzi.snapshot("3-calculator") { App(staged("timeline"), 2, false) }
     @Test fun s4_learn() = paparazzi.snapshot("4-learn") { App(staged("timeline"), 3, false) }
     @Test fun s5_about() = paparazzi.snapshot("5-about") { App(staged("timeline"), 0, true) }
+    // Tip jar (not a store screenshot; kept for review and docs).
+    @Test fun t1_tipjar() = paparazzi.snapshot("tipjar") { App(staged("timeline"), 3, false, TipJarUi.preview(), startTipJar = true) }
+    @Test fun t2_tipjar_thanks() = paparazzi.snapshot("tipjar-thanks") { App(staged("timeline"), 3, false, TipJarUi.preview(TipStatus.Thanked), startTipJar = true) }
 }

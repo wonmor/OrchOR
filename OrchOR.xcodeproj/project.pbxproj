@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0397D12E321297A3DDE698EF /* TipJar.storekit in Resources */ = {isa = PBXBuildFile; fileRef = A10CBEE0555592F9FD0CB0CD /* TipJar.storekit */; };
 		09773AFE47B00DBB07825097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */; };
 		0C53ACA185706FB61470BE84 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339C23E880D0707F8484945D /* AboutView.swift */; };
 		0DE74433C5F564E83DA94101 /* OrchORTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741233AC8840C687604FA12 /* OrchORTests.swift */; };
@@ -15,12 +16,15 @@
 		5A7B7274BD69113B8C1344C1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */; };
 		628EE530B28A79720FD5DCE1 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C3E891D7332E101C2ACB00EF /* OFL.txt */; };
 		84D3ED786F138109CAD048AE /* MicrotubuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44D47F7A762E7F26321242 /* MicrotubuleView.swift */; };
+		8CCA4114FF63A094CE73FB82 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCA9376C1732950FF24F8A /* TipJarView.swift */; };
 		A2439EE50C5A8E8195F00CB4 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C66B93B8C11E69F1CC9D /* TimelineView.swift */; };
 		A2BF2D470171E09684557F97 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2B96F919547470D313523 /* LearnView.swift */; };
 		B4C61A468CD0E283393D774D /* OrchORApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7C1893B9E3DA4B8E63702 /* OrchORApp.swift */; };
 		C5590D8DF0772CF74F4DAB91 /* Jost-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DBE0A729C02C5BD30013540 /* Jost-Variable.ttf */; };
+		CA281E374EA2CC73EBB2C34B /* TipJarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE35CD999CA731AB51E5A21 /* TipJarTests.swift */; };
 		CBD8BDE86E5FB945EF4EECD6 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E63003C66326F311A3F80 /* Physics.swift */; };
 		D5E336339F5C5F43BFF51982 /* OrchORSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E3556FEC347D33F26183C /* OrchORSimulation.swift */; };
+		E136C7C268D9E02C0E2E7A1B /* TipJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3D5F26C234D2DC9F59D78 /* TipJar.swift */; };
 		E5605AA50109D1445B7F839F /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C2A4FC96B8E4C2172D39E6 /* CalculatorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		06B05948C6ECEAFA0B64676A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		0ECCA9376C1732950FF24F8A /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		1DE35CD999CA731AB51E5A21 /* TipJarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarTests.swift; sourceTree = "<group>"; };
 		26E80BD967BDA8CE563DD7AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		339C23E880D0707F8484945D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		3DBE0A729C02C5BD30013540 /* Jost-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Variable.ttf"; sourceTree = "<group>"; };
@@ -48,6 +54,8 @@
 		8683242EA87A1D553486331F /* OrchOR.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OrchOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF2B96F919547470D313523 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		94A6A934844B1C37F162F86D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A10CBEE0555592F9FD0CB0CD /* TipJar.storekit */ = {isa = PBXFileReference; path = TipJar.storekit; sourceTree = "<group>"; };
+		A2B3D5F26C234D2DC9F59D78 /* TipJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJar.swift; sourceTree = "<group>"; };
 		AD4BDBFB6A1FB568EFCD5E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B663DD7348B6DB861224789F /* OrchORTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OrchORTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E891D7332E101C2ACB00EF /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 				7F44D47F7A762E7F26321242 /* MicrotubuleView.swift */,
 				94A6A934844B1C37F162F86D /* Theme.swift */,
 				8427C66B93B8C11E69F1CC9D /* TimelineView.swift */,
+				0ECCA9376C1732950FF24F8A /* TipJarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +98,14 @@
 				C3E891D7332E101C2ACB00EF /* OFL.txt */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		62AFFE65EAC96DDD423CC9F4 /* StoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				A10CBEE0555592F9FD0CB0CD /* TipJar.storekit */,
+			);
+			path = StoreKit;
 			sourceTree = "<group>";
 		};
 		66FB896B06156739911CBA4E /* Products */ = {
@@ -115,6 +132,7 @@
 			children = (
 				5B1E3556FEC347D33F26183C /* OrchORSimulation.swift */,
 				623E63003C66326F311A3F80 /* Physics.swift */,
+				A2B3D5F26C234D2DC9F59D78 /* TipJar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +142,7 @@
 			children = (
 				00D822A600A233FE01AA91A3 /* OrchOR */,
 				CF1A64A82EEB9AFE8781E035 /* OrchORTests */,
+				62AFFE65EAC96DDD423CC9F4 /* StoreKit */,
 				66FB896B06156739911CBA4E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				7741233AC8840C687604FA12 /* OrchORTests.swift */,
+				1DE35CD999CA731AB51E5A21 /* TipJarTests.swift */,
 			);
 			path = OrchORTests;
 			sourceTree = "<group>";
@@ -170,6 +190,7 @@
 			buildConfigurationList = 1826F646A88D5CD9D06F1CAC /* Build configuration list for PBXNativeTarget "OrchORTests" */;
 			buildPhases = (
 				ADE26EED7B59FF8505ED8303 /* Sources */,
+				11D280B3D9E21A0705627B44 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -223,6 +244,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		11D280B3D9E21A0705627B44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0397D12E321297A3DDE698EF /* TipJar.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6F176A30B5705FF71A61EE6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +280,8 @@
 				CBD8BDE86E5FB945EF4EECD6 /* Physics.swift in Sources */,
 				533DBF9F9F53D69813C5BC91 /* Theme.swift in Sources */,
 				A2439EE50C5A8E8195F00CB4 /* TimelineView.swift in Sources */,
+				E136C7C268D9E02C0E2E7A1B /* TipJar.swift in Sources */,
+				8CCA4114FF63A094CE73FB82 /* TipJarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE74433C5F564E83DA94101 /* OrchORTests.swift in Sources */,
+				CA281E374EA2CC73EBB2C34B /* TipJarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +342,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -331,7 +363,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -417,7 +449,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -432,7 +464,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
