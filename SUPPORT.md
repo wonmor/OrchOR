@@ -2,7 +2,7 @@
 
 Orch-OR Visualizer is an interactive teaching model of the Penrose–Hameroff "Orchestrated Objective Reduction" theory of consciousness.
 
-**Questions, bugs, or feature requests:** email wonmor@yahoo.com.
+**Questions, bugs, or feature requests:** email john@orchestrsim.com.
 
 **Frequently asked**
 

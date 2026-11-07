@@ -8,4 +8,4 @@ Orch-OR Visualizer is an educational app that simulates the Penrose–Hameroff O
 
 The app does not use cookies, device identifiers, location, contacts, photos, or any other personal information.
 
-If you have questions about this policy, contact: wonmor@yahoo.com
+If you have questions about this policy, contact: john@orchestrsim.com
